@@ -8,4 +8,12 @@ int main()
     std::string str;
     std::cout<<rsq.SerializeToString(&str)<<std::endl;
     std::cout<<str<<std::endl;
+
+    test::LoginResponse rsp;
+    test::ResultCode*p=rsp.mutable_result();
+    p->set_errcode("1");
+    p->set_errmsg("hello world");
+    rsp.set_succuss(true);
+    rsp.SerializeToString(&str);
+    std::cout<<str<<std::endl;
 }

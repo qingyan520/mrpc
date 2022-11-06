@@ -12,7 +12,7 @@ message LoginRequest{
 
 message LoginResponse{
     ResultCode result=1;
-    bytes succuss=2;
+    bool succuss=2;
 }
 
 

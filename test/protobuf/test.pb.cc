@@ -51,8 +51,8 @@ struct LoginRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LoginRequestDefaultTypeInternal _LoginRequest_default_instance_;
 PROTOBUF_CONSTEXPR LoginResponse::LoginResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.succuss_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.result_)*/nullptr
+    /*decltype(_impl_.result_)*/nullptr
+  , /*decltype(_impl_.succuss_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LoginResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR LoginResponseDefaultTypeInternal()
@@ -159,7 +159,7 @@ const char descriptor_table_protodef_test_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "ode\030\001 \001(\014\022\016\n\006errmsg\030\002 \001(\014\")\n\014LoginReques"
   "t\022\014\n\004name\030\001 \001(\014\022\013\n\003pwd\030\002 \001(\014\"B\n\rLoginRes"
   "ponse\022 \n\006result\030\001 \001(\0132\020.test.ResultCode\022"
-  "\017\n\007succuss\030\002 \001(\014\" \n\004User\022\n\n\002id\030\001 \001(\014\022\014\n\004"
+  "\017\n\007succuss\030\002 \001(\010\" \n\004User\022\n\n\002id\030\001 \001(\014\022\014\n\004"
   "name\030\002 \001(\014\"R\n\rgetFriendList\022 \n\006result\030\001 "
   "\001(\0132\020.test.ResultCode\022\037\n\013friend_list\030\002 \003"
   "(\0132\n.test.Userb\006proto3"
@@ -688,22 +688,15 @@ LoginResponse::LoginResponse(const LoginResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   LoginResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.succuss_){}
-    , decltype(_impl_.result_){nullptr}
+      decltype(_impl_.result_){nullptr}
+    , decltype(_impl_.succuss_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.succuss_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.succuss_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_succuss().empty()) {
-    _this->_impl_.succuss_.Set(from._internal_succuss(), 
-      _this->GetArenaForAllocation());
-  }
   if (from._internal_has_result()) {
     _this->_impl_.result_ = new ::test::ResultCode(*from._impl_.result_);
   }
+  _this->_impl_.succuss_ = from._impl_.succuss_;
   // @@protoc_insertion_point(copy_constructor:test.LoginResponse)
 }
 
@@ -712,14 +705,10 @@ inline void LoginResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.succuss_){}
-    , decltype(_impl_.result_){nullptr}
+      decltype(_impl_.result_){nullptr}
+    , decltype(_impl_.succuss_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.succuss_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.succuss_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 LoginResponse::~LoginResponse() {
@@ -733,7 +722,6 @@ LoginResponse::~LoginResponse() {
 
 inline void LoginResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.succuss_.Destroy();
   if (this != internal_default_instance()) delete _impl_.result_;
 }
 
@@ -747,11 +735,11 @@ void LoginResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.succuss_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
     delete _impl_.result_;
   }
   _impl_.result_ = nullptr;
+  _impl_.succuss_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -769,11 +757,10 @@ const char* LoginResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext*
         } else
           goto handle_unusual;
         continue;
-      // bytes succuss = 2;
+      // bool succuss = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_succuss();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.succuss_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -814,10 +801,10 @@ uint8_t* LoginResponse::_InternalSerialize(
         _Internal::result(this).GetCachedSize(), target, stream);
   }
 
-  // bytes succuss = 2;
-  if (!this->_internal_succuss().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_succuss(), target);
+  // bool succuss = 2;
+  if (this->_internal_succuss() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_succuss(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -836,18 +823,16 @@ size_t LoginResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes succuss = 2;
-  if (!this->_internal_succuss().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_succuss());
-  }
-
   // .test.ResultCode result = 1;
   if (this->_internal_has_result()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.result_);
+  }
+
+  // bool succuss = 2;
+  if (this->_internal_succuss() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -868,12 +853,12 @@ void LoginResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_succuss().empty()) {
-    _this->_internal_set_succuss(from._internal_succuss());
-  }
   if (from._internal_has_result()) {
     _this->_internal_mutable_result()->::test::ResultCode::MergeFrom(
         from._internal_result());
+  }
+  if (from._internal_succuss() != 0) {
+    _this->_internal_set_succuss(from._internal_succuss());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -891,14 +876,13 @@ bool LoginResponse::IsInitialized() const {
 
 void LoginResponse::InternalSwap(LoginResponse* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.succuss_, lhs_arena,
-      &other->_impl_.succuss_, rhs_arena
-  );
-  swap(_impl_.result_, other->_impl_.result_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(LoginResponse, _impl_.succuss_)
+      + sizeof(LoginResponse::_impl_.succuss_)
+      - PROTOBUF_FIELD_OFFSET(LoginResponse, _impl_.result_)>(
+          reinterpret_cast<char*>(&_impl_.result_),
+          reinterpret_cast<char*>(&other->_impl_.result_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LoginResponse::GetMetadata() const {

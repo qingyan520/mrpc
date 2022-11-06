@@ -531,23 +531,9 @@ class LoginResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSuccussFieldNumber = 2,
     kResultFieldNumber = 1,
+    kSuccussFieldNumber = 2,
   };
-  // bytes succuss = 2;
-  void clear_succuss();
-  const std::string& succuss() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_succuss(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_succuss();
-  PROTOBUF_NODISCARD std::string* release_succuss();
-  void set_allocated_succuss(std::string* succuss);
-  private:
-  const std::string& _internal_succuss() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_succuss(const std::string& value);
-  std::string* _internal_mutable_succuss();
-  public:
-
   // .test.ResultCode result = 1;
   bool has_result() const;
   private:
@@ -566,6 +552,15 @@ class LoginResponse final :
       ::test::ResultCode* result);
   ::test::ResultCode* unsafe_arena_release_result();
 
+  // bool succuss = 2;
+  void clear_succuss();
+  bool succuss() const;
+  void set_succuss(bool value);
+  private:
+  bool _internal_succuss() const;
+  void _internal_set_succuss(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:test.LoginResponse)
  private:
   class _Internal;
@@ -574,8 +569,8 @@ class LoginResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr succuss_;
     ::test::ResultCode* result_;
+    bool succuss_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1236,54 +1231,24 @@ inline void LoginResponse::set_allocated_result(::test::ResultCode* result) {
   // @@protoc_insertion_point(field_set_allocated:test.LoginResponse.result)
 }
 
-// bytes succuss = 2;
+// bool succuss = 2;
 inline void LoginResponse::clear_succuss() {
-  _impl_.succuss_.ClearToEmpty();
+  _impl_.succuss_ = false;
 }
-inline const std::string& LoginResponse::succuss() const {
+inline bool LoginResponse::_internal_succuss() const {
+  return _impl_.succuss_;
+}
+inline bool LoginResponse::succuss() const {
   // @@protoc_insertion_point(field_get:test.LoginResponse.succuss)
   return _internal_succuss();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void LoginResponse::set_succuss(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.succuss_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void LoginResponse::_internal_set_succuss(bool value) {
+  
+  _impl_.succuss_ = value;
+}
+inline void LoginResponse::set_succuss(bool value) {
+  _internal_set_succuss(value);
   // @@protoc_insertion_point(field_set:test.LoginResponse.succuss)
-}
-inline std::string* LoginResponse::mutable_succuss() {
-  std::string* _s = _internal_mutable_succuss();
-  // @@protoc_insertion_point(field_mutable:test.LoginResponse.succuss)
-  return _s;
-}
-inline const std::string& LoginResponse::_internal_succuss() const {
-  return _impl_.succuss_.Get();
-}
-inline void LoginResponse::_internal_set_succuss(const std::string& value) {
-  
-  _impl_.succuss_.Set(value, GetArenaForAllocation());
-}
-inline std::string* LoginResponse::_internal_mutable_succuss() {
-  
-  return _impl_.succuss_.Mutable(GetArenaForAllocation());
-}
-inline std::string* LoginResponse::release_succuss() {
-  // @@protoc_insertion_point(field_release:test.LoginResponse.succuss)
-  return _impl_.succuss_.Release();
-}
-inline void LoginResponse::set_allocated_succuss(std::string* succuss) {
-  if (succuss != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.succuss_.SetAllocated(succuss, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.succuss_.IsDefault()) {
-    _impl_.succuss_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:test.LoginResponse.succuss)
 }
 
 // -------------------------------------------------------------------
