@@ -1,0 +1,5 @@
+/home/sjw/mrpc/build/CMakeFiles/edit_cache.dir
+/home/sjw/mrpc/build/CMakeFiles/rebuild_cache.dir
+/home/sjw/mrpc/build/src/CMakeFiles/edit_cache.dir
+/home/sjw/mrpc/build/src/CMakeFiles/rebuild_cache.dir
+/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir
