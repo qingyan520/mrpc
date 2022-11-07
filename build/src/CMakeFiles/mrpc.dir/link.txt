@@ -1,1 +1,1 @@
-/opt/rh/devtoolset-7/root/usr/bin/c++  -fPIC   -shared -Wl,-soname,libmrpc.so -o libmrpc.so CMakeFiles/mrpc.dir/test.cc.o  -L/home/sjw/mrpc/lib -lprotobuf -Wl,-rpath,/home/sjw/mrpc/lib 
+/opt/rh/devtoolset-7/root/usr/bin/c++  -fPIC   -shared -Wl,-soname,libmrpc.so -o libmrpc.so CMakeFiles/mrpc.dir/test.cc.o  -L/home/sjw/mrpc/lib 
