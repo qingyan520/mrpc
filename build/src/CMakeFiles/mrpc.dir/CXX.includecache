@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-../include/test.h
-iostream
+../include/MrpcApplication.h
+
+../include/RpcProvider.h
+google/protobuf/service.h
 -
 
-/home/sjw/mrpc/src/test.cc
-test.h
-/home/sjw/mrpc/src/test.h
+/home/sjw/mrpc/src/MrpcApplication.cc
+MrpcApplication.h
+/home/sjw/mrpc/src/MrpcApplication.h
+
+/home/sjw/mrpc/src/RpcProvider.cc
+RpcProvider.h
+/home/sjw/mrpc/src/RpcProvider.h
 

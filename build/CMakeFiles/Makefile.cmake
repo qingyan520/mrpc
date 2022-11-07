@@ -13,6 +13,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.6.2/CMakeSystem.cmake"
   "CMakeFiles/feature_tests.c"
   "CMakeFiles/feature_tests.cxx"
+  "../example/CMakeLists.txt"
+  "../example/callee/CMakeLists.txt"
   "../src/CMakeLists.txt"
   "/usr/local/share/cmake-3.6/Modules/CMakeCCompiler.cmake.in"
   "/usr/local/share/cmake-3.6/Modules/CMakeCCompilerABI.c"
@@ -109,9 +111,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.6.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "example/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "example/callee/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/mrpc.dir/DependInfo.cmake"
+  "example/callee/CMakeFiles/provider.dir/DependInfo.cmake"
   )

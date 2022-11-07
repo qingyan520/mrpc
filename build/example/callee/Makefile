@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/sjw/mrpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles /home/sjw/mrpc/build/src/CMakeFiles/progress.marks
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	cd /home/sjw/mrpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles /home/sjw/mrpc/build/example/callee/CMakeFiles/progress.marks
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/callee/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/callee/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/callee/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/callee/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -111,73 +111,73 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/mrpc.dir/rule:
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mrpc.dir/rule
-.PHONY : src/CMakeFiles/mrpc.dir/rule
+example/callee/CMakeFiles/provider.dir/rule:
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/callee/CMakeFiles/provider.dir/rule
+.PHONY : example/callee/CMakeFiles/provider.dir/rule
 
 # Convenience name for target.
-mrpc: src/CMakeFiles/mrpc.dir/rule
+provider: example/callee/CMakeFiles/provider.dir/rule
 
-.PHONY : mrpc
+.PHONY : provider
 
 # fast build rule for target.
-mrpc/fast:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/build
-.PHONY : mrpc/fast
+provider/fast:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/build
+.PHONY : provider/fast
 
-MrpcApplication.o: MrpcApplication.cc.o
+UserService.o: UserService.cc.o
 
-.PHONY : MrpcApplication.o
-
-# target to build an object file
-MrpcApplication.cc.o:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o
-.PHONY : MrpcApplication.cc.o
-
-MrpcApplication.i: MrpcApplication.cc.i
-
-.PHONY : MrpcApplication.i
-
-# target to preprocess a source file
-MrpcApplication.cc.i:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.i
-.PHONY : MrpcApplication.cc.i
-
-MrpcApplication.s: MrpcApplication.cc.s
-
-.PHONY : MrpcApplication.s
-
-# target to generate assembly for a file
-MrpcApplication.cc.s:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.s
-.PHONY : MrpcApplication.cc.s
-
-RpcProvider.o: RpcProvider.cc.o
-
-.PHONY : RpcProvider.o
+.PHONY : UserService.o
 
 # target to build an object file
-RpcProvider.cc.o:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.o
-.PHONY : RpcProvider.cc.o
+UserService.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/UserService.cc.o
+.PHONY : UserService.cc.o
 
-RpcProvider.i: RpcProvider.cc.i
+UserService.i: UserService.cc.i
 
-.PHONY : RpcProvider.i
+.PHONY : UserService.i
 
 # target to preprocess a source file
-RpcProvider.cc.i:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.i
-.PHONY : RpcProvider.cc.i
+UserService.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/UserService.cc.i
+.PHONY : UserService.cc.i
 
-RpcProvider.s: RpcProvider.cc.s
+UserService.s: UserService.cc.s
 
-.PHONY : RpcProvider.s
+.PHONY : UserService.s
 
 # target to generate assembly for a file
-RpcProvider.cc.s:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.s
-.PHONY : RpcProvider.cc.s
+UserService.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/UserService.cc.s
+.PHONY : UserService.cc.s
+
+__/user.pb.o: __/user.pb.cc.o
+
+.PHONY : __/user.pb.o
+
+# target to build an object file
+__/user.pb.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/__/user.pb.cc.o
+.PHONY : __/user.pb.cc.o
+
+__/user.pb.i: __/user.pb.cc.i
+
+.PHONY : __/user.pb.i
+
+# target to preprocess a source file
+__/user.pb.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/__/user.pb.cc.i
+.PHONY : __/user.pb.cc.i
+
+__/user.pb.s: __/user.pb.cc.s
+
+.PHONY : __/user.pb.s
+
+# target to generate assembly for a file
+__/user.pb.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/__/user.pb.cc.s
+.PHONY : __/user.pb.cc.s
 
 # Help Target
 help:
@@ -187,13 +187,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... mrpc"
-	@echo "... MrpcApplication.o"
-	@echo "... MrpcApplication.i"
-	@echo "... MrpcApplication.s"
-	@echo "... RpcProvider.o"
-	@echo "... RpcProvider.i"
-	@echo "... RpcProvider.s"
+	@echo "... provider"
+	@echo "... UserService.o"
+	@echo "... UserService.i"
+	@echo "... UserService.s"
+	@echo "... __/user.pb.o"
+	@echo "... __/user.pb.i"
+	@echo "... __/user.pb.s"
 .PHONY : help
 
 

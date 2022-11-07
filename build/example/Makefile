@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/sjw/mrpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles /home/sjw/mrpc/build/src/CMakeFiles/progress.marks
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	cd /home/sjw/mrpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles /home/sjw/mrpc/build/example/CMakeFiles/progress.marks
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,87 +97,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
 	cd /home/sjw/mrpc/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-src/CMakeFiles/mrpc.dir/rule:
-	cd /home/sjw/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mrpc.dir/rule
-.PHONY : src/CMakeFiles/mrpc.dir/rule
-
-# Convenience name for target.
-mrpc: src/CMakeFiles/mrpc.dir/rule
-
-.PHONY : mrpc
-
-# fast build rule for target.
-mrpc/fast:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/build
-.PHONY : mrpc/fast
-
-MrpcApplication.o: MrpcApplication.cc.o
-
-.PHONY : MrpcApplication.o
-
-# target to build an object file
-MrpcApplication.cc.o:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o
-.PHONY : MrpcApplication.cc.o
-
-MrpcApplication.i: MrpcApplication.cc.i
-
-.PHONY : MrpcApplication.i
-
-# target to preprocess a source file
-MrpcApplication.cc.i:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.i
-.PHONY : MrpcApplication.cc.i
-
-MrpcApplication.s: MrpcApplication.cc.s
-
-.PHONY : MrpcApplication.s
-
-# target to generate assembly for a file
-MrpcApplication.cc.s:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.s
-.PHONY : MrpcApplication.cc.s
-
-RpcProvider.o: RpcProvider.cc.o
-
-.PHONY : RpcProvider.o
-
-# target to build an object file
-RpcProvider.cc.o:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.o
-.PHONY : RpcProvider.cc.o
-
-RpcProvider.i: RpcProvider.cc.i
-
-.PHONY : RpcProvider.i
-
-# target to preprocess a source file
-RpcProvider.cc.i:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.i
-.PHONY : RpcProvider.cc.i
-
-RpcProvider.s: RpcProvider.cc.s
-
-.PHONY : RpcProvider.s
-
-# target to generate assembly for a file
-RpcProvider.cc.s:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.s
-.PHONY : RpcProvider.cc.s
 
 # Help Target
 help:
@@ -187,13 +118,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... mrpc"
-	@echo "... MrpcApplication.o"
-	@echo "... MrpcApplication.i"
-	@echo "... MrpcApplication.s"
-	@echo "... RpcProvider.o"
-	@echo "... RpcProvider.i"
-	@echo "... RpcProvider.s"
 .PHONY : help
 
 

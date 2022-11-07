@@ -3,3 +3,8 @@
 /home/sjw/mrpc/build/src/CMakeFiles/edit_cache.dir
 /home/sjw/mrpc/build/src/CMakeFiles/rebuild_cache.dir
 /home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir
+/home/sjw/mrpc/build/example/CMakeFiles/edit_cache.dir
+/home/sjw/mrpc/build/example/CMakeFiles/rebuild_cache.dir
+/home/sjw/mrpc/build/example/callee/CMakeFiles/edit_cache.dir
+/home/sjw/mrpc/build/example/callee/CMakeFiles/rebuild_cache.dir
+/home/sjw/mrpc/build/example/callee/CMakeFiles/provider.dir
