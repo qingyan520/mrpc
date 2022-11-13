@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/sjw/mrpc/build/src",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++   -Dmrpc_EXPORTS -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g -fPIC   -o CMakeFiles/mrpc.dir/RpcProvider.cc.o -c /home/sjw/mrpc/src/RpcProvider.cc",
+  "file": "/home/sjw/mrpc/src/RpcProvider.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/src",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++   -Dmrpc_EXPORTS -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g -fPIC   -o CMakeFiles/mrpc.dir/MrpcApplication.cc.o -c /home/sjw/mrpc/src/MrpcApplication.cc",
+  "file": "/home/sjw/mrpc/src/MrpcApplication.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/src",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++   -Dmrpc_EXPORTS -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g -fPIC   -o CMakeFiles/mrpc.dir/ConfigFile.cc.o -c /home/sjw/mrpc/src/ConfigFile.cc",
+  "file": "/home/sjw/mrpc/src/ConfigFile.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/example/callee",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/UserService.cc.o -c /home/sjw/mrpc/example/callee/UserService.cc",
+  "file": "/home/sjw/mrpc/example/callee/UserService.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/example/callee",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/sjw/mrpc/example/user.pb.cc",
+  "file": "/home/sjw/mrpc/example/user.pb.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/test/ConfigFile",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/test_conf.dir/test.cpp.o -c /home/sjw/mrpc/test/ConfigFile/test.cpp",
+  "file": "/home/sjw/mrpc/test/ConfigFile/test.cpp"
+}
+]

@@ -7,14 +7,20 @@
 #IncludeRegexTransform: 
 
 ../include/MrpcApplication.h
+iostream
+-
 
 ../include/RpcProvider.h
 google/protobuf/service.h
 -
 
+/home/sjw/mrpc/src/ConfigFile.cc
+
 /home/sjw/mrpc/src/MrpcApplication.cc
 MrpcApplication.h
 /home/sjw/mrpc/src/MrpcApplication.h
+unistd.h
+-
 
 /home/sjw/mrpc/src/RpcProvider.cc
 RpcProvider.h

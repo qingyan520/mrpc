@@ -125,6 +125,33 @@ mrpc/fast:
 	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/build
 .PHONY : mrpc/fast
 
+ConfigFile.o: ConfigFile.cc.o
+
+.PHONY : ConfigFile.o
+
+# target to build an object file
+ConfigFile.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ConfigFile.cc.o
+.PHONY : ConfigFile.cc.o
+
+ConfigFile.i: ConfigFile.cc.i
+
+.PHONY : ConfigFile.i
+
+# target to preprocess a source file
+ConfigFile.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ConfigFile.cc.i
+.PHONY : ConfigFile.cc.i
+
+ConfigFile.s: ConfigFile.cc.s
+
+.PHONY : ConfigFile.s
+
+# target to generate assembly for a file
+ConfigFile.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ConfigFile.cc.s
+.PHONY : ConfigFile.cc.s
+
 MrpcApplication.o: MrpcApplication.cc.o
 
 .PHONY : MrpcApplication.o
@@ -188,6 +215,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mrpc"
+	@echo "... ConfigFile.o"
+	@echo "... ConfigFile.i"
+	@echo "... ConfigFile.s"
 	@echo "... MrpcApplication.o"
 	@echo "... MrpcApplication.i"
 	@echo "... MrpcApplication.s"

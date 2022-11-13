@@ -136,6 +136,19 @@ provider/fast:
 	$(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/build
 .PHONY : provider/fast
 
+#=============================================================================
+# Target rules for targets named test_conf
+
+# Build rule for target.
+test_conf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_conf
+.PHONY : test_conf
+
+# fast build rule for target.
+test_conf/fast:
+	$(MAKE) -f test/ConfigFile/CMakeFiles/test_conf.dir/build.make test/ConfigFile/CMakeFiles/test_conf.dir/build
+.PHONY : test_conf/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +159,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... mrpc"
 	@echo "... provider"
+	@echo "... test_conf"
 .PHONY : help
 
 

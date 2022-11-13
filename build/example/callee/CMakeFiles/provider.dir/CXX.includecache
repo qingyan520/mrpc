@@ -45,6 +45,8 @@ google/protobuf/port_undef.inc
 -
 
 ../include/MrpcApplication.h
+iostream
+-
 
 ../include/RpcProvider.h
 google/protobuf/service.h

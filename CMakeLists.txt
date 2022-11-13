@@ -18,3 +18,4 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #添加子目录
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
 add_subdirectory(${PROJECT_SOURCE_DIR}/example)
+add_subdirectory(${PROJECT_SOURCE_DIR}/test)

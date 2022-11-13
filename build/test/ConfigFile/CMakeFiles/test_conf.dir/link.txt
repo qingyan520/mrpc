@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-7/root/usr/bin/g++   -g   CMakeFiles/test_conf.dir/test.cpp.o  -o ../../../bin/test_conf  -L/home/sjw/mrpc/lib -rdynamic 

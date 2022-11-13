@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/sjw/mrpc/src/ConfigFile.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/ConfigFile.cc.o"
   "/home/sjw/mrpc/src/MrpcApplication.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o"
   "/home/sjw/mrpc/src/RpcProvider.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/RpcProvider.cc.o"
   )
