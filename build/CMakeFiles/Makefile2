@@ -227,7 +227,7 @@ test/ConfigFile/preinstall:
 # Target rules for target test/ConfigFile/CMakeFiles/test_conf.dir
 
 # All Build rule for target.
-test/ConfigFile/CMakeFiles/test_conf.dir/all:
+test/ConfigFile/CMakeFiles/test_conf.dir/all: src/CMakeFiles/mrpc.dir/all
 	$(MAKE) -f test/ConfigFile/CMakeFiles/test_conf.dir/build.make test/ConfigFile/CMakeFiles/test_conf.dir/depend
 	$(MAKE) -f test/ConfigFile/CMakeFiles/test_conf.dir/build.make test/ConfigFile/CMakeFiles/test_conf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=8,9 "Built target test_conf"
@@ -240,7 +240,7 @@ all: test/ConfigFile/CMakeFiles/test_conf.dir/all
 
 # Build rule for subdir invocation for target.
 test/ConfigFile/CMakeFiles/test_conf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 test/ConfigFile/CMakeFiles/test_conf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjw/mrpc/build/CMakeFiles 0
 .PHONY : test/ConfigFile/CMakeFiles/test_conf.dir/rule

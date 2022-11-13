@@ -16,7 +16,13 @@ string
 fstream
 -
 
-/home/sjw/mrpc/test/ConfigFile/test.cpp
+../include/MrpcApplication.h
+iostream
+-
 ConfigFile.h
-/home/sjw/mrpc/test/ConfigFile/ConfigFile.h
+../include/ConfigFile.h
+
+/home/sjw/mrpc/test/ConfigFile/test.cpp
+MrpcApplication.h
+/home/sjw/mrpc/test/ConfigFile/MrpcApplication.h
 

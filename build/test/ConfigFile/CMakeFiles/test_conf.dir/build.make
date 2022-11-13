@@ -90,6 +90,7 @@ test_conf_EXTERNAL_OBJECTS =
 
 ../bin/test_conf: test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.o
 ../bin/test_conf: test/ConfigFile/CMakeFiles/test_conf.dir/build.make
+../bin/test_conf: ../lib/libmrpc.so
 ../bin/test_conf: test/ConfigFile/CMakeFiles/test_conf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../bin/test_conf"
 	cd /home/sjw/mrpc/build/test/ConfigFile && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_conf.dir/link.txt --verbose=$(VERBOSE)

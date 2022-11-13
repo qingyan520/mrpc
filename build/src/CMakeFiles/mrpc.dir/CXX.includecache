@@ -6,15 +6,29 @@
 
 #IncludeRegexTransform: 
 
+../include/ConfigFile.h
+unordered_map
+-
+iostream
+-
+string
+-
+fstream
+-
+
 ../include/MrpcApplication.h
 iostream
 -
+ConfigFile.h
+../include/ConfigFile.h
 
 ../include/RpcProvider.h
 google/protobuf/service.h
 -
 
 /home/sjw/mrpc/src/ConfigFile.cc
+ConfigFile.h
+/home/sjw/mrpc/src/ConfigFile.h
 
 /home/sjw/mrpc/src/MrpcApplication.cc
 MrpcApplication.h

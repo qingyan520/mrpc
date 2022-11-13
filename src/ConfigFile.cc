@@ -8,13 +8,14 @@
 //4.如何一行中没有找到=也跳过
 void ConfigFile::LoadConfig(const std::string&argv)
 {
-    std::cout<<argv<<std::endl;
+
+    //std::cout<<argv<<std::endl;
     //一行一行从argv中读取文件
     std::fstream f;
     f.open(argv.c_str(),std::ios::binary|std::ios::in);
     if(!f.is_open())
     {
-        std::cout<<"打开文件"<<argv<<std::endl;
+        std::cout<<"LoadConfigFile:"<<argv<<"失败"<<std::endl;
         exit(EXIT_FAILURE);
     }
     std::string line;   //读取文件中读到的每一行
@@ -37,7 +38,7 @@ void ConfigFile::LoadConfig(const std::string&argv)
         {
             continue;
         }
-        std::cout<<line<<std::endl;
+       // std::cout<<line<<std::endl;
 
         //以‘=’进行分割，如果找不到'='，跳过进行下一行读取
         int index=line.find("=");
@@ -56,7 +57,7 @@ void ConfigFile::LoadConfig(const std::string&argv)
         {
             val.erase(val.begin(),val.begin()+1);
         }
-        std::cout<<"key:"<<key<<" val:"<<val<<std::endl;
+        //std::cout<<"key:"<<key<<" val:"<<val<<std::endl;
         ConfigMap_.insert({key,val});
     }
 }

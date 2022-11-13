@@ -1,7 +1,6 @@
-#include"ConfigFile.h"
-int main()
+#include"MrpcApplication.h"
+int main(int argc,char*argv[])
 {
-    ConfigFile con;
-    con.LoadConfig("cong.conf");
+    MrpcApplication::Init(argc,argv);
     return 0;
 }

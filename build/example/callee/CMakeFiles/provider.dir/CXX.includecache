@@ -44,9 +44,21 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
+../include/ConfigFile.h
+unordered_map
+-
+iostream
+-
+string
+-
+fstream
+-
+
 ../include/MrpcApplication.h
 iostream
 -
+ConfigFile.h
+../include/ConfigFile.h
 
 ../include/RpcProvider.h
 google/protobuf/service.h
