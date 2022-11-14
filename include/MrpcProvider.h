@@ -1,6 +1,7 @@
 #pragma once
 #include<google/protobuf/service.h>
 #include<google/protobuf/descriptor.h>
+#include<google/protobuf/message.h>
 #include<muduo/net/TcpServer.h>
 #include<muduo/net/TcpConnection.h>
 #include<muduo/net/EventLoop.h>
@@ -11,7 +12,7 @@
 #include<string>
 #include<thread>
 #include"MrpcApplication.h"
-
+#include"MessageHeader.pb.h"
 class MrpcProvider{
     
     public:

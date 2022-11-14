@@ -53,11 +53,67 @@ void MrpcProvider::Run(){
 //设置连接回调
 void MrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr&conn)
 {
-
+    if(conn->connected())
+    {
+        std::cout<<conn->peerAddress().toIpPort()<<std::endl;
+    }
+    else
+    {
+        conn->shutdown();   //断开连接后释放TcpConnection,模拟http短链接
+    }
 }
 
-//设置消息处理回调
+//设置消息处理回调，主要进行数据的反序列化，等待执行完本次处理之后发送响应
 void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer*buf,muduo::Timestamp timestamp)
 {
+    //在这里我们需要解析对端传来的请求协议
+    //请求格式如下所示：
+    //请求头长度+请求服务名称+请求方法名称+请求正文长度+请求正文
+    //在这个我们让一个字符串前四个字节存储请求头长度n，这样从4字节开始读取n各字节就是请求头长度
+    //解析请求头得到服务名称+方法名称+正文长度，我们从4+n的位置开始读取正文长度，这样就得到请求正文
+    //这样做主要是为了防止Tcp粘包问题的发生
+    std::string msg=buf->retrieveAllAsString();
+    int head_size=0;
+    msg.copy((char*)&head_size,4,0);            //得到msg前4各字节数据，这里利用msg的copy函数，一点小技巧，比自己用字符串之类更加实用
+    
+    std::string message_header=msg.substr(4,head_size); //得到消息头
+    MessageHeader MsgHeader;
+    if(!MsgHeader.ParseFromString(message_header))   //解析请求头
+    {
+        std::cout<<conn->peerAddress().toIpPort()<<": ParseFromString:"<<message_header<<" error!"<<std::endl;
+        return ;
+    }
 
+    std::string service_name=MsgHeader.service_name();   //得到请求服务的名称
+    std::string method_name=MsgHeader.method_name();     //得到请求方法名称
+    int body_size=MsgHeader.body_size();                 //得到请求正文长度   
+    std::string body=msg.substr(4+head_size,body_size);  //得到请求正文
+
+    //现在就根据请求方法名称在map表中寻找对应的服务是否存在
+    std::unordered_map<std::string,ServiceInfo>::iterator service_iterator=ServiceMap_.find(service_name);
+    if(service_iterator==ServiceMap_.end())
+    {
+        std::cout<<"The service:"<<service_name<<"not exists in this RpcNode"<<std::endl;
+        return;
+    }
+    //现在确定在这个节点上有这个服务了，接下来确定早这个服务里面是否有这个方法
+    std::unordered_map<std::string,const google::protobuf::MethodDescriptor*>::iterator method_iterator=service_iterator->second.MethodMap_.find(method_name);
+    if(method_iterator==service_iterator->second.MethodMap_.end())
+    {
+        std::cout<<"The service "<<service_name<<"has not  this method "<<method_name<<"!"<<std::endl;
+        return;
+    }
+    //现在method_iterator的second就是MethodDescriptor，就可以通过这个方法得到对应方法的请求参数和返回参数，然后调用对应的方法了
+    const google::protobuf::MethodDescriptor*methodDescriptor=method_iterator->second;  
+    //现在就是进行请求参数序列化和相应参数序列化了
+    google::protobuf::Message*RequestMessage=service_iterator->second.service_->GetRequestPrototype(methodDescriptor).New();    //得到对应方法的请求参数
+    google::protobuf::Message*ResponseMessage=service_iterator->second.service_->GetResponsePrototype(methodDescriptor).New();  //得到对应方法的响应参数
+    //现在知道所约定的rpc响应和请求类型了，接下来反序列化请求参数到RequestMessage当中去
+    if(!RequestMessage->ParseFromString(body))
+    {
+        std::cout<<"RequestMessage Parse from \""<<body<<"\""<<"error!"<<std::endl;
+        return ;
+    }
+    //接下来就是处理进行本地业务处理，然后发送返回值就ok了,Rcp会根据method方法执行我们所写的函数，然后发送响应
+    service_iterator->second.service_->CallMethod(methodDescriptor,nullptr,RequestMessage,ResponseMessage,nullptr);
 }
