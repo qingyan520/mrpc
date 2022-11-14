@@ -179,32 +179,32 @@ MrpcApplication.cc.s:
 	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.s
 .PHONY : MrpcApplication.cc.s
 
-RpcProvider.o: RpcProvider.cc.o
+MrpcProvider.o: MrpcProvider.cc.o
 
-.PHONY : RpcProvider.o
+.PHONY : MrpcProvider.o
 
 # target to build an object file
-RpcProvider.cc.o:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.o
-.PHONY : RpcProvider.cc.o
+MrpcProvider.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o
+.PHONY : MrpcProvider.cc.o
 
-RpcProvider.i: RpcProvider.cc.i
+MrpcProvider.i: MrpcProvider.cc.i
 
-.PHONY : RpcProvider.i
+.PHONY : MrpcProvider.i
 
 # target to preprocess a source file
-RpcProvider.cc.i:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.i
-.PHONY : RpcProvider.cc.i
+MrpcProvider.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcProvider.cc.i
+.PHONY : MrpcProvider.cc.i
 
-RpcProvider.s: RpcProvider.cc.s
+MrpcProvider.s: MrpcProvider.cc.s
 
-.PHONY : RpcProvider.s
+.PHONY : MrpcProvider.s
 
 # target to generate assembly for a file
-RpcProvider.cc.s:
-	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/RpcProvider.cc.s
-.PHONY : RpcProvider.cc.s
+MrpcProvider.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcProvider.cc.s
+.PHONY : MrpcProvider.cc.s
 
 # Help Target
 help:
@@ -221,9 +221,9 @@ help:
 	@echo "... MrpcApplication.o"
 	@echo "... MrpcApplication.i"
 	@echo "... MrpcApplication.s"
-	@echo "... RpcProvider.o"
-	@echo "... RpcProvider.i"
-	@echo "... RpcProvider.s"
+	@echo "... MrpcProvider.o"
+	@echo "... MrpcProvider.i"
+	@echo "... MrpcProvider.s"
 .PHONY : help
 
 

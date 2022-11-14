@@ -1,1 +1,2 @@
-/opt/rh/devtoolset-7/root/usr/bin/g++  -fPIC -g  -shared -Wl,-soname,libmrpc.so -o ../../lib/libmrpc.so CMakeFiles/mrpc.dir/RpcProvider.cc.o CMakeFiles/mrpc.dir/MrpcApplication.cc.o CMakeFiles/mrpc.dir/ConfigFile.cc.o  -L/home/sjw/mrpc/lib 
+/opt/rh/devtoolset-7/root/usr/bin/ar qc ../../lib/libmrpc.a  CMakeFiles/mrpc.dir/MrpcProvider.cc.o CMakeFiles/mrpc.dir/MrpcApplication.cc.o CMakeFiles/mrpc.dir/ConfigFile.cc.o
+/opt/rh/devtoolset-7/root/usr/bin/ranlib ../../lib/libmrpc.a

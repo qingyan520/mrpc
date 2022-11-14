@@ -4,7 +4,7 @@
 example/callee/CMakeFiles/provider.dir/UserService.cc.o: ../example/user.pb.h
 example/callee/CMakeFiles/provider.dir/UserService.cc.o: ../include/ConfigFile.h
 example/callee/CMakeFiles/provider.dir/UserService.cc.o: ../include/MrpcApplication.h
-example/callee/CMakeFiles/provider.dir/UserService.cc.o: ../include/RpcProvider.h
+example/callee/CMakeFiles/provider.dir/UserService.cc.o: ../include/MrpcProvider.h
 example/callee/CMakeFiles/provider.dir/UserService.cc.o: ../example/callee/UserService.cc
 
 example/callee/CMakeFiles/provider.dir/__/user.pb.cc.o: ../example/user.pb.cc

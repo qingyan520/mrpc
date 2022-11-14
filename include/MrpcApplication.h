@@ -11,7 +11,12 @@ class MrpcApplication{
 
     //得到真正的读取配置文件的组件config;
     static void Init(int argc,char*argv[]);
-    
+
+    static ConfigFile&GetConfig()
+    {
+        return  config_;
+    }
+
     private:
     MrpcApplication()=default;
     MrpcApplication(const MrpcApplication&)=delete;

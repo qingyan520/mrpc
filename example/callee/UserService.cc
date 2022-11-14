@@ -1,6 +1,6 @@
 #include"user.pb.h"
 #include"MrpcApplication.h"
-#include"RpcProvider.h"
+#include"MrpcProvider.h"
 #include<string>
 
 class UserService:public test::UserServiceRpc {
@@ -39,10 +39,10 @@ int main(int argc,char**argv)
 
     //provider是一个rpc网络服务对象
     //把UserService对象发布到rpc节点上
-    RpcProvider provider;
+    MrpcProvider provider;
     provider.NotifyService(new UserService());
 
-    //启动以恶搞rpc,Run以后，进程进入阻塞状态，等待远程rpc的请求
+    //启动一个rpc,Run以后，进程进入阻塞状态，等待远程rpc的请求
     provider.Run();
     return 0;
 }

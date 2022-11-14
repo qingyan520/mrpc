@@ -22,9 +22,29 @@ iostream
 ConfigFile.h
 ../include/ConfigFile.h
 
-../include/RpcProvider.h
+../include/MrpcProvider.h
 google/protobuf/service.h
 -
+muduo/net/TcpServer.h
+-
+muduo/net/TcpConnection.h
+-
+muduo/net/EventLoop.h
+-
+muduo/net/InetAddress.h
+-
+muduo/base/Timestamp.h
+-
+unordered_map
+-
+functional
+-
+string
+-
+thread
+-
+MrpcApplication.h
+../include/MrpcApplication.h
 
 /home/sjw/mrpc/src/ConfigFile.cc
 ConfigFile.h
@@ -36,7 +56,7 @@ MrpcApplication.h
 unistd.h
 -
 
-/home/sjw/mrpc/src/RpcProvider.cc
-RpcProvider.h
-/home/sjw/mrpc/src/RpcProvider.h
+/home/sjw/mrpc/src/MrpcProvider.cc
+MrpcProvider.h
+/home/sjw/mrpc/src/MrpcProvider.h
 
