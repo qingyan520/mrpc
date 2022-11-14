@@ -25,6 +25,8 @@ ConfigFile.h
 ../include/MrpcProvider.h
 google/protobuf/service.h
 -
+google/protobuf/descriptor.h
+-
 muduo/net/TcpServer.h
 -
 muduo/net/TcpConnection.h
