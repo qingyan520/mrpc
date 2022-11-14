@@ -1,5 +1,6 @@
 #include"MrpcProvider.h"
 
+
 void MrpcProvider::NotifyService(google::protobuf::Service*service){
     //得到每一个service提供者的名字，service对象，service里面的每一个方法名称和方法实现
     //然后保存到map表格中，当调用方调用的时候，就可以直接用服务名称和方法名称进行调用了
@@ -20,6 +21,7 @@ void MrpcProvider::NotifyService(google::protobuf::Service*service){
     }
     ServiceMap_.insert({service_name,serviceInfo});
 }
+
 
 void MrpcProvider::Run(){
     //启动rpc服务器，设置读写回调，设置线程数量，进入事件循环
@@ -62,6 +64,20 @@ void MrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr&conn)
         conn->shutdown();   //断开连接后释放TcpConnection,模拟http短链接
     }
 }
+
+
+//设置发送回调
+void MrpcProvider::SendResponse(const muduo::net::TcpConnectionPtr&conn,google::protobuf::Message*ResponseMessage)
+{
+    std::string sendMsgResponse;
+    if(!ResponseMessage->SerializeToString(&sendMsgResponse))      //序列化响应数据
+    {
+        std::cout<<"SendResponse::SerializeToString error!"<<std::endl;
+        return;
+    }
+    conn->send(sendMsgResponse);
+}
+
 
 //设置消息处理回调，主要进行数据的反序列化，等待执行完本次处理之后发送响应
 void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer*buf,muduo::Timestamp timestamp)
@@ -114,6 +130,9 @@ void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net:
         std::cout<<"RequestMessage Parse from \""<<body<<"\""<<"error!"<<std::endl;
         return ;
     }
+    //设置发送回调，当执行完本地业务之后发送响应
+    google::protobuf::Closure*callback=google::protobuf::NewCallback<MrpcProvider,const muduo::net::TcpConnectionPtr&,google::protobuf::Message*>(this,&MrpcProvider::SendResponse,conn,ResponseMessage);
     //接下来就是处理进行本地业务处理，然后发送返回值就ok了,Rcp会根据method方法执行我们所写的函数，然后发送响应
-    service_iterator->second.service_->CallMethod(methodDescriptor,nullptr,RequestMessage,ResponseMessage,nullptr);
+    service_iterator->second.service_->CallMethod(methodDescriptor,nullptr,RequestMessage,ResponseMessage,callback);
 }
+

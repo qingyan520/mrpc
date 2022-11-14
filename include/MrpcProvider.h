@@ -35,5 +35,6 @@ class MrpcProvider{
     void OnConnection(const muduo::net::TcpConnectionPtr&);
     //设置时间到来时候的回调
     void OnMessage(const muduo::net::TcpConnectionPtr&,muduo::net::Buffer*,muduo::Timestamp);
-    //设置发送回调函数
+    //设置发送回调函数，当执行完本地函数之后发送响应
+    void SendResponse(const muduo::net::TcpConnectionPtr&,google::protobuf::Message*);
 };
