@@ -4,12 +4,16 @@
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.o
  ../include/ConfigFile.h
  /home/sjw/mrpc/src/ConfigFile.cc
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o
+ ../include/MessageHeader.pb.h
+ /home/sjw/mrpc/src/MessageHeader.pb.cc
 src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o
  ../include/ConfigFile.h
  ../include/MrpcApplication.h
  /home/sjw/mrpc/src/MrpcApplication.cc
 src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o
  ../include/ConfigFile.h
+ ../include/MessageHeader.pb.h
  ../include/MrpcApplication.h
  ../include/MrpcProvider.h
  /home/sjw/mrpc/src/MrpcProvider.cc

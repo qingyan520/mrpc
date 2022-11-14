@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/sjw/mrpc/build/src",
+  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o -c /home/sjw/mrpc/src/MessageHeader.pb.cc",
+  "file": "/home/sjw/mrpc/src/MessageHeader.pb.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/src",
   "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MrpcProvider.cc.o -c /home/sjw/mrpc/src/MrpcProvider.cc",
   "file": "/home/sjw/mrpc/src/MrpcProvider.cc"
 },

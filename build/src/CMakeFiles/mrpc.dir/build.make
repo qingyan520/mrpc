@@ -57,9 +57,33 @@ include src/CMakeFiles/mrpc.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/mrpc.dir/flags.make
 
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o: src/CMakeFiles/mrpc.dir/flags.make
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o: ../src/MessageHeader.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o"
+	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-7/root/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o -c /home/sjw/mrpc/src/MessageHeader.pb.cc
+
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mrpc.dir/MessageHeader.pb.cc.i"
+	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-7/root/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sjw/mrpc/src/MessageHeader.pb.cc > CMakeFiles/mrpc.dir/MessageHeader.pb.cc.i
+
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mrpc.dir/MessageHeader.pb.cc.s"
+	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-7/root/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sjw/mrpc/src/MessageHeader.pb.cc -o CMakeFiles/mrpc.dir/MessageHeader.pb.cc.s
+
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.requires:
+
+.PHONY : src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.requires
+
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.provides: src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.provides.build
+.PHONY : src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.provides
+
+src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.provides.build: src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o
+
+
 src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o: ../src/MrpcProvider.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o"
 	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-7/root/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/MrpcProvider.cc.o -c /home/sjw/mrpc/src/MrpcProvider.cc
 
 src/CMakeFiles/mrpc.dir/MrpcProvider.cc.i: cmake_force
@@ -83,7 +107,7 @@ src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o.provides.build: src/CMakeFiles/mrpc.di
 
 src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o: ../src/MrpcApplication.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o"
 	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-7/root/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/MrpcApplication.cc.o -c /home/sjw/mrpc/src/MrpcApplication.cc
 
 src/CMakeFiles/mrpc.dir/MrpcApplication.cc.i: cmake_force
@@ -107,7 +131,7 @@ src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o.provides.build: src/CMakeFiles/mrpc
 
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.o: ../src/ConfigFile.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mrpc.dir/ConfigFile.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mrpc.dir/ConfigFile.cc.o"
 	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-7/root/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/ConfigFile.cc.o -c /home/sjw/mrpc/src/ConfigFile.cc
 
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.i: cmake_force
@@ -131,6 +155,7 @@ src/CMakeFiles/mrpc.dir/ConfigFile.cc.o.provides.build: src/CMakeFiles/mrpc.dir/
 
 # Object files for target mrpc
 mrpc_OBJECTS = \
+"CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o" \
 "CMakeFiles/mrpc.dir/MrpcProvider.cc.o" \
 "CMakeFiles/mrpc.dir/MrpcApplication.cc.o" \
 "CMakeFiles/mrpc.dir/ConfigFile.cc.o"
@@ -138,12 +163,13 @@ mrpc_OBJECTS = \
 # External object files for target mrpc
 mrpc_EXTERNAL_OBJECTS =
 
+../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/ConfigFile.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/build.make
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library ../../lib/libmrpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library ../../lib/libmrpc.a"
 	cd /home/sjw/mrpc/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mrpc.dir/cmake_clean_target.cmake
 	cd /home/sjw/mrpc/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mrpc.dir/link.txt --verbose=$(VERBOSE)
 
@@ -152,6 +178,7 @@ src/CMakeFiles/mrpc.dir/build: ../lib/libmrpc.a
 
 .PHONY : src/CMakeFiles/mrpc.dir/build
 
+src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/ConfigFile.cc.o.requires
