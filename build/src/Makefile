@@ -206,6 +206,33 @@ MrpcApplication.cc.s:
 	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcApplication.cc.s
 .PHONY : MrpcApplication.cc.s
 
+MrpcChannel.o: MrpcChannel.cc.o
+
+.PHONY : MrpcChannel.o
+
+# target to build an object file
+MrpcChannel.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o
+.PHONY : MrpcChannel.cc.o
+
+MrpcChannel.i: MrpcChannel.cc.i
+
+.PHONY : MrpcChannel.i
+
+# target to preprocess a source file
+MrpcChannel.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcChannel.cc.i
+.PHONY : MrpcChannel.cc.i
+
+MrpcChannel.s: MrpcChannel.cc.s
+
+.PHONY : MrpcChannel.s
+
+# target to generate assembly for a file
+MrpcChannel.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcChannel.cc.s
+.PHONY : MrpcChannel.cc.s
+
 MrpcProvider.o: MrpcProvider.cc.o
 
 .PHONY : MrpcProvider.o
@@ -251,6 +278,9 @@ help:
 	@echo "... MrpcApplication.o"
 	@echo "... MrpcApplication.i"
 	@echo "... MrpcApplication.s"
+	@echo "... MrpcChannel.o"
+	@echo "... MrpcChannel.i"
+	@echo "... MrpcChannel.s"
 	@echo "... MrpcProvider.o"
 	@echo "... MrpcProvider.i"
 	@echo "... MrpcProvider.s"

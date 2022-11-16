@@ -7,6 +7,8 @@
 #include<muduo/net/EventLoop.h>
 #include<muduo/net/InetAddress.h>
 #include<muduo/base/Timestamp.h>
+#include<muduo/net/Buffer.h>
+
 #include<unordered_map>
 #include<functional>
 #include<string>
@@ -34,7 +36,7 @@ class MrpcProvider{
     //设置新用户连接或者断开时候的回调
     void OnConnection(const muduo::net::TcpConnectionPtr&);
     //设置时间到来时候的回调
-    void OnMessage(const muduo::net::TcpConnectionPtr&,muduo::net::Buffer*,muduo::Timestamp);
+    void OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer*buf,muduo::Timestamp recvTIme);
     //设置发送回调函数，当执行完本地函数之后发送响应
     void SendResponse(const muduo::net::TcpConnectionPtr&,google::protobuf::Message*);
 };

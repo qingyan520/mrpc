@@ -75,13 +75,18 @@ void MrpcProvider::SendResponse(const muduo::net::TcpConnectionPtr&conn,google::
         std::cout<<"SendResponse::SerializeToString error!"<<std::endl;
         return;
     }
+    std::cout<<"SendResponse...."<<std::endl;
     conn->send(sendMsgResponse);
+    std::cout<<sendMsgResponse<<"Send success!"<<"msg.size()"<<sendMsgResponse.size()<<std::endl;
+    //发送成功之后，断开连接，模拟http短链接
+    conn->shutdown();
 }
 
 
 //设置消息处理回调，主要进行数据的反序列化，等待执行完本次处理之后发送响应
-void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer*buf,muduo::Timestamp timestamp)
+void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer*buf,muduo::Timestamp recvTime)
 {
+    std::cout<<"hello world"<<std::endl;
     //在这里我们需要解析对端传来的请求协议
     //请求格式如下所示：
     //请求头长度+请求服务名称+请求方法名称+请求正文长度+请求正文
@@ -92,6 +97,10 @@ void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net:
     int head_size=0;
     msg.copy((char*)&head_size,4,0);            //得到msg前4各字节数据，这里利用msg的copy函数，一点小技巧，比自己用字符串之类更加实用
     
+    //测试：
+    std::cout<<msg<<std::endl;
+    std::cout<<"head_size:"<<head_size<<std::endl;
+
     std::string message_header=msg.substr(4,head_size); //得到消息头
     MessageHeader MsgHeader;
     if(!MsgHeader.ParseFromString(message_header))   //解析请求头
@@ -104,6 +113,11 @@ void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net:
     std::string method_name=MsgHeader.method_name();     //得到请求方法名称
     int body_size=MsgHeader.body_size();                 //得到请求正文长度   
     std::string body=msg.substr(4+head_size,body_size);  //得到请求正文
+
+    //测试解析是否正确
+    std::cout<<"service_name:"<<service_name<<std::endl;
+    std::cout<<"method_name:"<<method_name<<std::endl;
+    std::cout<<"body:"<<body<<std::endl;
 
     //现在就根据请求方法名称在map表中寻找对应的服务是否存在
     std::unordered_map<std::string,ServiceInfo>::iterator service_iterator=ServiceMap_.find(service_name);

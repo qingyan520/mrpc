@@ -137,6 +137,19 @@ provider/fast:
 .PHONY : provider/fast
 
 #=============================================================================
+# Target rules for targets named caller
+
+# Build rule for target.
+caller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 caller
+.PHONY : caller
+
+# fast build rule for target.
+caller/fast:
+	$(MAKE) -f example/caller/CMakeFiles/caller.dir/build.make example/caller/CMakeFiles/caller.dir/build
+.PHONY : caller/fast
+
+#=============================================================================
 # Target rules for targets named test_conf
 
 # Build rule for target.
@@ -159,6 +172,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... mrpc"
 	@echo "... provider"
+	@echo "... caller"
 	@echo "... test_conf"
 .PHONY : help
 

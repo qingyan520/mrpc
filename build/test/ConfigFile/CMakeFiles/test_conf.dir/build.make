@@ -60,15 +60,15 @@ include test/ConfigFile/CMakeFiles/test_conf.dir/flags.make
 test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.o: test/ConfigFile/CMakeFiles/test_conf.dir/flags.make
 test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.o: ../test/ConfigFile/test.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.o"
-	cd /home/sjw/mrpc/build/test/ConfigFile && /opt/rh/devtoolset-7/root/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_conf.dir/test.cpp.o -c /home/sjw/mrpc/test/ConfigFile/test.cpp
+	cd /home/sjw/mrpc/build/test/ConfigFile && /opt/rh/devtoolset-11/root/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_conf.dir/test.cpp.o -c /home/sjw/mrpc/test/ConfigFile/test.cpp
 
 test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_conf.dir/test.cpp.i"
-	cd /home/sjw/mrpc/build/test/ConfigFile && /opt/rh/devtoolset-7/root/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sjw/mrpc/test/ConfigFile/test.cpp > CMakeFiles/test_conf.dir/test.cpp.i
+	cd /home/sjw/mrpc/build/test/ConfigFile && /opt/rh/devtoolset-11/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sjw/mrpc/test/ConfigFile/test.cpp > CMakeFiles/test_conf.dir/test.cpp.i
 
 test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_conf.dir/test.cpp.s"
-	cd /home/sjw/mrpc/build/test/ConfigFile && /opt/rh/devtoolset-7/root/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sjw/mrpc/test/ConfigFile/test.cpp -o CMakeFiles/test_conf.dir/test.cpp.s
+	cd /home/sjw/mrpc/build/test/ConfigFile && /opt/rh/devtoolset-11/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sjw/mrpc/test/ConfigFile/test.cpp -o CMakeFiles/test_conf.dir/test.cpp.s
 
 test/ConfigFile/CMakeFiles/test_conf.dir/test.cpp.o.requires:
 

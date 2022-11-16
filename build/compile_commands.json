@@ -1,37 +1,52 @@
 [
 {
   "directory": "/home/sjw/mrpc/build/src",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o -c /home/sjw/mrpc/src/MessageHeader.pb.cc",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o -c /home/sjw/mrpc/src/MessageHeader.pb.cc",
   "file": "/home/sjw/mrpc/src/MessageHeader.pb.cc"
 },
 {
   "directory": "/home/sjw/mrpc/build/src",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MrpcProvider.cc.o -c /home/sjw/mrpc/src/MrpcProvider.cc",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MrpcProvider.cc.o -c /home/sjw/mrpc/src/MrpcProvider.cc",
   "file": "/home/sjw/mrpc/src/MrpcProvider.cc"
 },
 {
   "directory": "/home/sjw/mrpc/build/src",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MrpcApplication.cc.o -c /home/sjw/mrpc/src/MrpcApplication.cc",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MrpcApplication.cc.o -c /home/sjw/mrpc/src/MrpcApplication.cc",
   "file": "/home/sjw/mrpc/src/MrpcApplication.cc"
 },
 {
   "directory": "/home/sjw/mrpc/build/src",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/ConfigFile.cc.o -c /home/sjw/mrpc/src/ConfigFile.cc",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/MrpcChannel.cc.o -c /home/sjw/mrpc/src/MrpcChannel.cc",
+  "file": "/home/sjw/mrpc/src/MrpcChannel.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/src",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/ConfigFile.cc.o -c /home/sjw/mrpc/src/ConfigFile.cc",
   "file": "/home/sjw/mrpc/src/ConfigFile.cc"
 },
 {
   "directory": "/home/sjw/mrpc/build/example/callee",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/UserService.cc.o -c /home/sjw/mrpc/example/callee/UserService.cc",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/UserService.cc.o -c /home/sjw/mrpc/example/callee/UserService.cc",
   "file": "/home/sjw/mrpc/example/callee/UserService.cc"
 },
 {
   "directory": "/home/sjw/mrpc/build/example/callee",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/sjw/mrpc/example/user.pb.cc",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/sjw/mrpc/example/user.pb.cc",
+  "file": "/home/sjw/mrpc/example/user.pb.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/example/caller",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/caller.dir/UserCaller.cc.o -c /home/sjw/mrpc/example/caller/UserCaller.cc",
+  "file": "/home/sjw/mrpc/example/caller/UserCaller.cc"
+},
+{
+  "directory": "/home/sjw/mrpc/build/example/caller",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/caller.dir/__/user.pb.cc.o -c /home/sjw/mrpc/example/user.pb.cc",
   "file": "/home/sjw/mrpc/example/user.pb.cc"
 },
 {
   "directory": "/home/sjw/mrpc/build/test/ConfigFile",
-  "command": "/opt/rh/devtoolset-7/root/usr/bin/g++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/test_conf.dir/test.cpp.o -c /home/sjw/mrpc/test/ConfigFile/test.cpp",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/test_conf.dir/test.cpp.o -c /home/sjw/mrpc/test/ConfigFile/test.cpp",
   "file": "/home/sjw/mrpc/test/ConfigFile/test.cpp"
 }
 ]

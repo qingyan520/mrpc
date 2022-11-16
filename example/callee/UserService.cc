@@ -9,6 +9,7 @@ class UserService:public test::UserServiceRpc {
     {
         std::cout<<"---------Login----------"<<std::endl;
         std::cout<<"-----name:"<<name<<" pwd:"<<pwd<<std::endl;
+        std::cout<<"Login处理业务完毕"<<std::endl;
         return true;
     }
      void Login(::google::protobuf::RpcController* controller,
@@ -21,13 +22,14 @@ class UserService:public test::UserServiceRpc {
 
         //在本地机器上进行处理
         bool result_login=Login(name,pwd);
-
+        std::cout<<"服务端处理业务完成，填充返回值"<<std::endl;
         //填充返回值
         test::ResultCode*ret=response->mutable_result();
         ret->set_errcode(0);
         ret->set_errmsg("hello");
         response->set_success(result_login);
 
+        std::cout<<"填充返回值成功,进行发送中"<<std::endl;
         //交给框架进行序列化与发送
         done->Run();
     }

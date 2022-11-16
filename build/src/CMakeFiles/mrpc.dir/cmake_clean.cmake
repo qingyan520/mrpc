@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o"
   "CMakeFiles/mrpc.dir/MrpcProvider.cc.o"
   "CMakeFiles/mrpc.dir/MrpcApplication.cc.o"
+  "CMakeFiles/mrpc.dir/MrpcChannel.cc.o"
   "CMakeFiles/mrpc.dir/ConfigFile.cc.o"
   "../../lib/libmrpc.pdb"
   "../../lib/libmrpc.a"

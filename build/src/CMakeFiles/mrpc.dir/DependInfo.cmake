@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sjw/mrpc/src/ConfigFile.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/ConfigFile.cc.o"
   "/home/sjw/mrpc/src/MessageHeader.pb.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o"
   "/home/sjw/mrpc/src/MrpcApplication.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o"
+  "/home/sjw/mrpc/src/MrpcChannel.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o"
   "/home/sjw/mrpc/src/MrpcProvider.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

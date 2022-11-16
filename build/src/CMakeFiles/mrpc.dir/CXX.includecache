@@ -56,6 +56,30 @@ iostream
 ConfigFile.h
 ../include/ConfigFile.h
 
+../include/MrpcChannel.h
+google/protobuf/service.h
+-
+google/protobuf/descriptor.h
+-
+google/protobuf/message.h
+-
+iostream
+-
+sys/socket.h
+-
+unistd.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+string
+-
+MessageHeader.pb.h
+../include/MessageHeader.pb.h
+MrpcApplication.h
+../include/MrpcApplication.h
+
 ../include/MrpcProvider.h
 google/protobuf/service.h
 -
@@ -72,6 +96,8 @@ muduo/net/EventLoop.h
 muduo/net/InetAddress.h
 -
 muduo/base/Timestamp.h
+-
+muduo/net/Buffer.h
 -
 unordered_map
 -
@@ -119,6 +145,10 @@ MrpcApplication.h
 /home/sjw/mrpc/src/MrpcApplication.h
 unistd.h
 -
+
+/home/sjw/mrpc/src/MrpcChannel.cc
+MrpcChannel.h
+/home/sjw/mrpc/src/MrpcChannel.h
 
 /home/sjw/mrpc/src/MrpcProvider.cc
 MrpcProvider.h
