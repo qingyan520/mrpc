@@ -15,7 +15,11 @@ src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o: ../include/ConfigFile.h
 src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o: ../include/MessageHeader.pb.h
 src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o: ../include/MrpcApplication.h
 src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o: ../include/MrpcChannel.h
+src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o: ../include/MrpcController.h
 src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o: ../src/MrpcChannel.cc
+
+src/CMakeFiles/mrpc.dir/MrpcController.cc.o: ../include/MrpcController.h
+src/CMakeFiles/mrpc.dir/MrpcController.cc.o: ../src/MrpcController.cc
 
 src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o: ../include/ConfigFile.h
 src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o: ../include/MessageHeader.pb.h

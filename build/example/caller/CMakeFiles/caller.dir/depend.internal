@@ -7,6 +7,7 @@ example/caller/CMakeFiles/caller.dir/UserCaller.cc.o
  ../include/MessageHeader.pb.h
  ../include/MrpcApplication.h
  ../include/MrpcChannel.h
+ ../include/MrpcController.h
  /home/sjw/mrpc/example/caller/UserCaller.cc
 example/caller/CMakeFiles/caller.dir/__/user.pb.cc.o
  /home/sjw/mrpc/example/user.pb.cc

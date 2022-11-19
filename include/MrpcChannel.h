@@ -9,6 +9,7 @@
 #include<string>
 #include"MessageHeader.pb.h"
 #include"MrpcApplication.h"
+#include"MrpcController.h"
 class MrpcChannel:public google::protobuf::RpcChannel{
     public:
     MrpcChannel()=default;

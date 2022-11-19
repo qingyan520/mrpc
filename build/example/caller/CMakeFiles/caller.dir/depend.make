@@ -6,6 +6,7 @@ example/caller/CMakeFiles/caller.dir/UserCaller.cc.o: ../include/ConfigFile.h
 example/caller/CMakeFiles/caller.dir/UserCaller.cc.o: ../include/MessageHeader.pb.h
 example/caller/CMakeFiles/caller.dir/UserCaller.cc.o: ../include/MrpcApplication.h
 example/caller/CMakeFiles/caller.dir/UserCaller.cc.o: ../include/MrpcChannel.h
+example/caller/CMakeFiles/caller.dir/UserCaller.cc.o: ../include/MrpcController.h
 example/caller/CMakeFiles/caller.dir/UserCaller.cc.o: ../example/caller/UserCaller.cc
 
 example/caller/CMakeFiles/caller.dir/__/user.pb.cc.o: ../example/user.pb.cc

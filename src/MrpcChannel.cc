@@ -1,5 +1,17 @@
 #include"MrpcChannel.h"
 
+
+static void SetErrorMessage(google::protobuf::RpcController*controller,const std::string& reason)
+{
+    if(controller!=nullptr)
+    {
+        controller->SetFailed(reason);
+    }
+    else
+    {
+        std::cout<<reason<<std::endl;
+    }
+}
 //重写CallMethod方法
 void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
                              google::protobuf::RpcController*controller,const google::protobuf::Message*request,
@@ -16,7 +28,7 @@ void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
     std::string request_body;
     if(!request->SerializeToString(&request_body))
     {
-        std::cout<<"CallMethod::request->SerializeToString error"<<std::endl;
+        SetErrorMessage(controller,"MrpcChannel::CallMethod::request->SerializeToString error!");   //设置错误信息
         return;
     }
 
@@ -29,39 +41,39 @@ void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
     std::string header;
     if(!msg_header.SerializeToString(&header))
     {
-        std::cout<<"CallMethod::msg->header.SerializeToString error!"<<std::endl;
+        SetErrorMessage(controller,"MrpcChannel::CallMethod::msg->header.SerializeToString error!");
         return;
     }
 
     std::string send_request;           //要发送的请求
     int header_size=header.size();
     
-    std::cout<<"header_size:"<<header_size<<std::endl;
+   // std::cout<<"header_size:"<<header_size<<std::endl;
     send_request.insert(0,(char*)&header_size,4);   //前4个字节存储请求头长度
-    std::cout<<"send_request.size():"<<send_request.size()<<std::endl;
-    for(int i=0;i<send_request.size();i++)
-    {
-        std::cout<<send_request[i]<<"|";
-    }
-    std::cout<<std::endl;
-    std::cout<<"1.send_request:"<<send_request<<std::endl;
+   // std::cout<<"send_request.size():"<<send_request.size()<<std::endl;
+    // for(int i=0;i<send_request.size();i++)
+    // {
+    //     std::cout<<send_request[i]<<"|";
+    // }
+    // std::cout<<std::endl;
+    // std::cout<<"1.send_request:"<<send_request<<std::endl;
     send_request+=header;               //拼接请求头
-    std::cout<<"2.send_request:"<<send_request<<std::endl;
+    //std::cout<<"2.send_request:"<<send_request<<std::endl;
     send_request+=request_body;         //拼接请求正文
-    std::cout<<"3.send_request:"<<send_request<<std::endl;
+    //  std::cout<<"3.send_request:"<<send_request<<std::endl;
     //数据的序列化已经完成了，接下来就是建立网络连接，发送数据，然后接受数据了
     //简单的Tcp客户端编程
     int sockfd=socket(AF_INET,SOCK_STREAM,0);
     if(sockfd<0)
     {
-        std::cout<<"create sockfd error!"<<std::endl;
+        SetErrorMessage(controller,"MrpcChannel::CallMethod::create sockfd error!");
         return;
     }
 
     //读取对端ip,port，注意这里后续改为从zookeeper客户端读取
     std::string ip=MrpcApplication::GetConfig().Load("server_ip");
     std::string port=MrpcApplication::GetConfig().Load("server_port");
-    std::cout<<"connect "<<ip<<":"<<port<<std::endl;
+    //std::cout<<"connect "<<ip<<":"<<port<<std::endl;
     sockaddr_in addr;
     addr.sin_family=AF_INET;
     addr.sin_port=htons(atoi(port.c_str()));
@@ -69,7 +81,8 @@ void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
 
     if(connect(sockfd,(sockaddr*)&addr,sizeof(addr))<0)
     {
-        std::cout<<"connect "<<ip<<":"<<port<<" error!"<<std::endl;
+        //std::cout<<"connect "<<ip<<":"<<port<<" error!"<<std::endl;
+        SetErrorMessage(controller,"MrpcChannel::CallMethod::connect "+ip+":"+port+" error!");
         return;
     }
 
@@ -77,10 +90,9 @@ void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
     int n=send(sockfd,send_request.c_str(),send_request.size(),0);
     if(n<0)
     {
-        std::cout<<"send request:"<<send_request<<" error!"<<std::endl;
+        SetErrorMessage(controller,"MrpcChannel::CallMethod::send_request error!");
         return;
     }
-    std::cout<<"send request success!:"<<send_request<<std::endl;
     //发送数据成功，现在就需要阻塞等待接受数据了
     std::string response_body;
     char c;   //每次读取一个数据
@@ -90,24 +102,24 @@ void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
     {
         if(recv_ret==-1)
         {
-            std::cout<<"recv error"<<std::endl;
+            SetErrorMessage(controller,"MrpcChannle::Method::recv response_body error!");
             return;
         }
         if(recv_ret==0)
         {
             break;
         }
-        std::cout<<"第"<<i++<<"次读取"<<std::endl;
+        //std::cout<<"第"<<i++<<"次读取"<<std::endl;
         response_body.push_back(c);
-        std::cout<<response_body<<std::endl;
+        //std::cout<<response_body<<std::endl;
         recv_ret=recv(sockfd,&c,1,0);
     }
 
     //序列化
     if(!response->ParseFromString(response_body))
     {
-        std::cout<<"CallMethod::response->ParseFromString error!"<<std::endl;
+        SetErrorMessage(controller,"MrpcChannel::CallMethod::response->ParseFromString error!");
         return;
     }
-    std::cout<<"repsonse->ParseFromString success!"<<std::endl;
+    //std::cout<<"repsonse->ParseFromString success!"<<std::endl;
 }

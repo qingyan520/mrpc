@@ -79,6 +79,14 @@ MessageHeader.pb.h
 ../include/MessageHeader.pb.h
 MrpcApplication.h
 ../include/MrpcApplication.h
+MrpcController.h
+../include/MrpcController.h
+
+../include/MrpcController.h
+google/protobuf/service.h
+-
+string
+-
 
 ../include/MrpcProvider.h
 google/protobuf/service.h
@@ -149,6 +157,10 @@ unistd.h
 /home/sjw/mrpc/src/MrpcChannel.cc
 MrpcChannel.h
 /home/sjw/mrpc/src/MrpcChannel.h
+
+/home/sjw/mrpc/src/MrpcController.cc
+MrpcController.h
+/home/sjw/mrpc/src/MrpcController.h
 
 /home/sjw/mrpc/src/MrpcProvider.cc
 MrpcProvider.h

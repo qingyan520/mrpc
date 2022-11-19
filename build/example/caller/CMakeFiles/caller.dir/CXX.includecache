@@ -117,6 +117,14 @@ MessageHeader.pb.h
 ../include/MessageHeader.pb.h
 MrpcApplication.h
 ../include/MrpcApplication.h
+MrpcController.h
+../include/MrpcController.h
+
+../include/MrpcController.h
+google/protobuf/service.h
+-
+string
+-
 
 /home/sjw/mrpc/example/caller/UserCaller.cc
 user.pb.h
