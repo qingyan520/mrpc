@@ -16,6 +16,22 @@ string
 fstream
 -
 
+../include/LockQueue.h
+queue
+-
+condition_variable
+-
+mutex
+-
+
+../include/Log.h
+LockQueue.h
+../include/LockQueue.h
+string
+-
+thread
+-
+
 ../include/MessageHeader.pb.h
 limits
 -
@@ -123,6 +139,20 @@ MessageHeader.pb.h
 /home/sjw/mrpc/src/ConfigFile.cc
 ConfigFile.h
 /home/sjw/mrpc/src/ConfigFile.h
+
+/home/sjw/mrpc/src/Log.cc
+Log.h
+/home/sjw/mrpc/src/Log.h
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+sstream
+-
 
 /home/sjw/mrpc/src/MessageHeader.pb.cc
 MessageHeader.pb.h

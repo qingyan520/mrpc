@@ -152,6 +152,33 @@ ConfigFile.cc.s:
 	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ConfigFile.cc.s
 .PHONY : ConfigFile.cc.s
 
+Log.o: Log.cc.o
+
+.PHONY : Log.o
+
+# target to build an object file
+Log.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/Log.cc.o
+.PHONY : Log.cc.o
+
+Log.i: Log.cc.i
+
+.PHONY : Log.i
+
+# target to preprocess a source file
+Log.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/Log.cc.i
+.PHONY : Log.cc.i
+
+Log.s: Log.cc.s
+
+.PHONY : Log.s
+
+# target to generate assembly for a file
+Log.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/Log.cc.s
+.PHONY : Log.cc.s
+
 MessageHeader.pb.o: MessageHeader.pb.cc.o
 
 .PHONY : MessageHeader.pb.o
@@ -299,6 +326,9 @@ help:
 	@echo "... ConfigFile.o"
 	@echo "... ConfigFile.i"
 	@echo "... ConfigFile.s"
+	@echo "... Log.o"
+	@echo "... Log.i"
+	@echo "... Log.s"
 	@echo "... MessageHeader.pb.o"
 	@echo "... MessageHeader.pb.i"
 	@echo "... MessageHeader.pb.s"

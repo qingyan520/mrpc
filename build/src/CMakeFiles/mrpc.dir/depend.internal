@@ -4,6 +4,10 @@
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.o
  ../include/ConfigFile.h
  /home/sjw/mrpc/src/ConfigFile.cc
+src/CMakeFiles/mrpc.dir/Log.cc.o
+ ../include/LockQueue.h
+ ../include/Log.h
+ /home/sjw/mrpc/src/Log.cc
 src/CMakeFiles/mrpc.dir/MessageHeader.pb.cc.o
  ../include/MessageHeader.pb.h
  /home/sjw/mrpc/src/MessageHeader.pb.cc

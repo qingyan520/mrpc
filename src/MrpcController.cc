@@ -29,7 +29,7 @@ void MrpcController::SetFailed(const std::string& reason){
 }
 
 bool MrpcController::IsCanceled() const{
-
+    return false;
 }
 
 void MrpcController::NotifyOnCancel(google::protobuf::Closure* callback){

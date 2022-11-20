@@ -177,9 +177,33 @@ src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o.provides: src/CMakeFiles/mrpc.dir/MrpcC
 src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o.provides.build: src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o
 
 
+src/CMakeFiles/mrpc.dir/Log.cc.o: src/CMakeFiles/mrpc.dir/flags.make
+src/CMakeFiles/mrpc.dir/Log.cc.o: ../src/Log.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/mrpc.dir/Log.cc.o"
+	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-11/root/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/Log.cc.o -c /home/sjw/mrpc/src/Log.cc
+
+src/CMakeFiles/mrpc.dir/Log.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mrpc.dir/Log.cc.i"
+	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-11/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sjw/mrpc/src/Log.cc > CMakeFiles/mrpc.dir/Log.cc.i
+
+src/CMakeFiles/mrpc.dir/Log.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mrpc.dir/Log.cc.s"
+	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-11/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sjw/mrpc/src/Log.cc -o CMakeFiles/mrpc.dir/Log.cc.s
+
+src/CMakeFiles/mrpc.dir/Log.cc.o.requires:
+
+.PHONY : src/CMakeFiles/mrpc.dir/Log.cc.o.requires
+
+src/CMakeFiles/mrpc.dir/Log.cc.o.provides: src/CMakeFiles/mrpc.dir/Log.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/Log.cc.o.provides.build
+.PHONY : src/CMakeFiles/mrpc.dir/Log.cc.o.provides
+
+src/CMakeFiles/mrpc.dir/Log.cc.o.provides.build: src/CMakeFiles/mrpc.dir/Log.cc.o
+
+
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.o: ../src/ConfigFile.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/mrpc.dir/ConfigFile.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/mrpc.dir/ConfigFile.cc.o"
 	cd /home/sjw/mrpc/build/src && /opt/rh/devtoolset-11/root/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/ConfigFile.cc.o -c /home/sjw/mrpc/src/ConfigFile.cc
 
 src/CMakeFiles/mrpc.dir/ConfigFile.cc.i: cmake_force
@@ -208,6 +232,7 @@ mrpc_OBJECTS = \
 "CMakeFiles/mrpc.dir/MrpcProvider.cc.o" \
 "CMakeFiles/mrpc.dir/MrpcApplication.cc.o" \
 "CMakeFiles/mrpc.dir/MrpcChannel.cc.o" \
+"CMakeFiles/mrpc.dir/Log.cc.o" \
 "CMakeFiles/mrpc.dir/ConfigFile.cc.o"
 
 # External object files for target mrpc
@@ -218,10 +243,11 @@ mrpc_EXTERNAL_OBJECTS =
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o
+../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/Log.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/ConfigFile.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/build.make
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library ../../lib/libmrpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../../lib/libmrpc.a"
 	cd /home/sjw/mrpc/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mrpc.dir/cmake_clean_target.cmake
 	cd /home/sjw/mrpc/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mrpc.dir/link.txt --verbose=$(VERBOSE)
 
@@ -235,6 +261,7 @@ src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MrpcController.cc.o.re
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MrpcApplication.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o.requires
+src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/Log.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/ConfigFile.cc.o.requires
 
 .PHONY : src/CMakeFiles/mrpc.dir/requires
