@@ -32,7 +32,7 @@ void MrpcProvider::Run(){
     std::string port=MrpcApplication::GetConfig().Load("server_port");
     if(ip==""||port=="")
     {
-        std::cout<<"GetConfig server_ip or server_port error!"<<std::endl;
+        LOG(FATAL,"GetConfig server_ip or server_port error,please check out configfile!");
         exit(EXIT_FAILURE);
     }
     muduo::net::InetAddress addr(ip,atoi(port.c_str()));
@@ -57,11 +57,12 @@ void MrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr&conn)
 {
     if(conn->connected())
     {
-        std::cout<<conn->peerAddress().toIpPort()<<std::endl;
+        LOG(INFO,"A new Connection from "+conn->peerAddress().toIpPort());
     }
     else
     {
-        conn->shutdown();   //断开连接后释放TcpConnection,模拟http短链接
+        LOG(INFO,"Connection from "+conn->peerAddress().toIpPort()+" has disconnected!");
+        // conn->shutdown();   //断开连接后释放TcpConnection,模拟http短链接
     }
 }
 
@@ -72,12 +73,11 @@ void MrpcProvider::SendResponse(const muduo::net::TcpConnectionPtr&conn,google::
     std::string sendMsgResponse;
     if(!ResponseMessage->SerializeToString(&sendMsgResponse))      //序列化响应数据
     {
-        std::cout<<"SendResponse::SerializeToString error!"<<std::endl;
+        LOG(WARNING,"SendResponse::SerializeToString error!");
         return;
     }
-    std::cout<<"SendResponse...."<<std::endl;
+    //// std::cout<<sendMsgResponse<<"Send success!"<<"msg.size()"<<sendMsgResponse.size()<<std::endl;
     conn->send(sendMsgResponse);
-    std::cout<<sendMsgResponse<<"Send success!"<<"msg.size()"<<sendMsgResponse.size()<<std::endl;
     //发送成功之后，断开连接，模拟http短链接
     conn->shutdown();
 }
@@ -86,7 +86,7 @@ void MrpcProvider::SendResponse(const muduo::net::TcpConnectionPtr&conn,google::
 //设置消息处理回调，主要进行数据的反序列化，等待执行完本次处理之后发送响应
 void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net::Buffer*buf,muduo::Timestamp recvTime)
 {
-    std::cout<<"hello world"<<std::endl;
+   // std::cout<<"hello world"<<std::endl;
     //在这里我们需要解析对端传来的请求协议
     //请求格式如下所示：
     //请求头长度+请求服务名称+请求方法名称+请求正文长度+请求正文
@@ -98,14 +98,15 @@ void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net:
     msg.copy((char*)&head_size,4,0);            //得到msg前4各字节数据，这里利用msg的copy函数，一点小技巧，比自己用字符串之类更加实用
     
     //测试：
-    std::cout<<msg<<std::endl;
-    std::cout<<"head_size:"<<head_size<<std::endl;
+   // std::cout<<msg<<std::endl;
+   // std::cout<<"head_size:"<<head_size<<std::endl;
 
     std::string message_header=msg.substr(4,head_size); //得到消息头
     MessageHeader MsgHeader;
     if(!MsgHeader.ParseFromString(message_header))   //解析请求头
     {
-        std::cout<<conn->peerAddress().toIpPort()<<": ParseFromString:"<<message_header<<" error!"<<std::endl;
+        //std::cout<<conn->peerAddress().toIpPort()<<": ParseFromString:"<<message_header<<" error!"<<std::endl;
+        LOG(WARNING,"A connection from "+conn->peerAddress().toIpPort()+" :MsgHeader.ParseFromString:"+message_header+" error!");
         return ;
     }
 
@@ -115,22 +116,24 @@ void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net:
     std::string body=msg.substr(4+head_size,body_size);  //得到请求正文
 
     //测试解析是否正确
-    std::cout<<"service_name:"<<service_name<<std::endl;
-    std::cout<<"method_name:"<<method_name<<std::endl;
-    std::cout<<"body:"<<body<<std::endl;
+   // std::cout<<"service_name:"<<service_name<<std::endl;
+   // std::cout<<"method_name:"<<method_name<<std::endl;
+   // std::cout<<"body:"<<body<<std::endl;
 
     //现在就根据请求方法名称在map表中寻找对应的服务是否存在
     std::unordered_map<std::string,ServiceInfo>::iterator service_iterator=ServiceMap_.find(service_name);
     if(service_iterator==ServiceMap_.end())
     {
-        std::cout<<"The service:"<<service_name<<"not exists in this RpcNode"<<std::endl;
+       // std::cout<<"The service:"<<service_name<<"not exists in this RpcNode"<<std::endl;
+        LOG(WARNING,"A connection from "+conn->peerAddress().toIpPort()+" request service:"+service_name+" not exists!");
         return;
     }
     //现在确定在这个节点上有这个服务了，接下来确定早这个服务里面是否有这个方法
     std::unordered_map<std::string,const google::protobuf::MethodDescriptor*>::iterator method_iterator=service_iterator->second.MethodMap_.find(method_name);
     if(method_iterator==service_iterator->second.MethodMap_.end())
     {
-        std::cout<<"The service "<<service_name<<"has not  this method "<<method_name<<"!"<<std::endl;
+        //std::cout<<"The service "<<service_name<<"has not  this method "<<method_name<<"!"<<std::endl;
+        LOG(WARNING,"A connection from "+conn->peerAddress().toIpPort()+" request method:"+method_name+" of service:"+service_name+" not exists!");
         return;
     }
     //现在method_iterator的second就是MethodDescriptor，就可以通过这个方法得到对应方法的请求参数和返回参数，然后调用对应的方法了
@@ -141,12 +144,14 @@ void MrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr&conn,muduo::net:
     //现在知道所约定的rpc响应和请求类型了，接下来反序列化请求参数到RequestMessage当中去
     if(!RequestMessage->ParseFromString(body))
     {
-        std::cout<<"RequestMessage Parse from \""<<body<<"\""<<"error!"<<std::endl;
+        //std::cout<<"RequestMessage Parse from \""<<body<<"\""<<"error!"<<std::endl;
+        LOG(WARNING,"A connection from "+conn->peerAddress().toIpPort()+":RequestMessage->ParseFromstring(body) error!");
         return ;
     }
     //设置发送回调，当执行完本地业务之后发送响应
     google::protobuf::Closure*callback=google::protobuf::NewCallback<MrpcProvider,const muduo::net::TcpConnectionPtr&,google::protobuf::Message*>(this,&MrpcProvider::SendResponse,conn,ResponseMessage);
     //接下来就是处理进行本地业务处理，然后发送返回值就ok了,Rcp会根据method方法执行我们所写的函数，然后发送响应
     service_iterator->second.service_->CallMethod(methodDescriptor,nullptr,RequestMessage,ResponseMessage,callback);
+    LOG(INFO,"Send response to "+conn->peerAddress().toIpPort()+" success!");
 }
 

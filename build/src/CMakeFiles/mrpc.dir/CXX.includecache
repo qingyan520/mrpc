@@ -135,6 +135,8 @@ MrpcApplication.h
 ../include/MrpcApplication.h
 MessageHeader.pb.h
 ../include/MessageHeader.pb.h
+Log.h
+../include/Log.h
 
 /home/sjw/mrpc/src/ConfigFile.cc
 ConfigFile.h

@@ -1,3 +1,4 @@
+#pragma once
 #include<google/protobuf/service.h>
 #include<string>
 //RpcController负责标识Rpc方法调用错误原因，让客户端获知Rpc方法是否调用成功

@@ -54,6 +54,22 @@ string
 fstream
 -
 
+../include/LockQueue.h
+queue
+-
+condition_variable
+-
+mutex
+-
+
+../include/Log.h
+LockQueue.h
+../include/LockQueue.h
+string
+-
+thread
+-
+
 ../include/MessageHeader.pb.h
 limits
 -
@@ -125,6 +141,8 @@ MrpcApplication.h
 ../include/MrpcApplication.h
 MessageHeader.pb.h
 ../include/MessageHeader.pb.h
+Log.h
+../include/Log.h
 
 /home/sjw/mrpc/example/callee/UserService.cc
 user.pb.h

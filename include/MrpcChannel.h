@@ -1,3 +1,4 @@
+#pragma once
 #include<google/protobuf/service.h>
 #include<google/protobuf/descriptor.h>
 #include<google/protobuf/message.h>

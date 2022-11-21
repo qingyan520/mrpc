@@ -11,8 +11,8 @@ int main(int argc,char*argv[])
    test::UserServiceRpc_Stub service(new MrpcChannel);
     MrpcController*controller=new MrpcController;
    test::LoginRequest request;
-   request.set_name("张三");
-   request.set_pwd("123456");
+   request.set_name("李四");
+   request.set_pwd("12345阿达6");
    test::LoginResponse response;
    service.Login(controller,&request,&response,nullptr);
    if(controller->Failed())

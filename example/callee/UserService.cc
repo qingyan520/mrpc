@@ -22,14 +22,14 @@ class UserService:public test::UserServiceRpc {
 
         //在本地机器上进行处理
         bool result_login=Login(name,pwd);
-        std::cout<<"服务端处理业务完成，填充返回值"<<std::endl;
+        //std::cout<<"服务端处理业务完成，填充返回值"<<std::endl;
         //填充返回值
         test::ResultCode*ret=response->mutable_result();
-        ret->set_errcode(0);
-        ret->set_errmsg("hello");
+        ret->set_errcode(11);
+        ret->set_errmsg("登录成功!");
         response->set_success(result_login);
 
-        std::cout<<"填充返回值成功,进行发送中"<<std::endl;
+       // std::cout<<"填充返回值成功,进行发送中"<<std::endl;
         //交给框架进行序列化与发送
         done->Run();
     }

@@ -15,6 +15,7 @@
 #include<thread>
 #include"MrpcApplication.h"
 #include"MessageHeader.pb.h"
+#include"Log.h"
 class MrpcProvider{
     
     public:
