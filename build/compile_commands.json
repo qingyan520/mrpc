@@ -55,8 +55,8 @@
   "file": "/home/sjw/mrpc/example/user.pb.cc"
 },
 {
-  "directory": "/home/sjw/mrpc/build/test/ConfigFile",
-  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/test_conf.dir/test.cpp.o -c /home/sjw/mrpc/test/ConfigFile/test.cpp",
-  "file": "/home/sjw/mrpc/test/ConfigFile/test.cpp"
+  "directory": "/home/sjw/mrpc/build/test/Log",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/test_Log.dir/test.cc.o -c /home/sjw/mrpc/test/Log/test.cc",
+  "file": "/home/sjw/mrpc/test/Log/test.cc"
 }
 ]

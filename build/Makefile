@@ -150,17 +150,17 @@ caller/fast:
 .PHONY : caller/fast
 
 #=============================================================================
-# Target rules for targets named test_conf
+# Target rules for targets named test_Log
 
 # Build rule for target.
-test_conf: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_conf
-.PHONY : test_conf
+test_Log: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_Log
+.PHONY : test_Log
 
 # fast build rule for target.
-test_conf/fast:
-	$(MAKE) -f test/ConfigFile/CMakeFiles/test_conf.dir/build.make test/ConfigFile/CMakeFiles/test_conf.dir/build
-.PHONY : test_conf/fast
+test_Log/fast:
+	$(MAKE) -f test/Log/CMakeFiles/test_Log.dir/build.make test/Log/CMakeFiles/test_Log.dir/build
+.PHONY : test_Log/fast
 
 # Help Target
 help:
@@ -173,7 +173,7 @@ help:
 	@echo "... mrpc"
 	@echo "... provider"
 	@echo "... caller"
-	@echo "... test_conf"
+	@echo "... test_Log"
 .PHONY : help
 
 

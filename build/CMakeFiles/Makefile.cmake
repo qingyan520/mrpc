@@ -16,7 +16,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../example/caller/CMakeLists.txt"
   "../src/CMakeLists.txt"
   "../test/CMakeLists.txt"
-  "../test/ConfigFile/CMakeLists.txt"
+  "../test/Log/CMakeLists.txt"
   "/usr/local/share/cmake-3.6/Modules/CMakeCInformation.cmake"
   "/usr/local/share/cmake-3.6/Modules/CMakeCXXInformation.cmake"
   "/usr/local/share/cmake-3.6/Modules/CMakeCommonLanguageInclude.cmake"
@@ -48,7 +48,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "example/callee/CMakeFiles/CMakeDirectoryInformation.cmake"
   "example/caller/CMakeFiles/CMakeDirectoryInformation.cmake"
   "test/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "test/ConfigFile/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/Log/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -56,5 +56,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/mrpc.dir/DependInfo.cmake"
   "example/callee/CMakeFiles/provider.dir/DependInfo.cmake"
   "example/caller/CMakeFiles/caller.dir/DependInfo.cmake"
-  "test/ConfigFile/CMakeFiles/test_conf.dir/DependInfo.cmake"
+  "test/Log/CMakeFiles/test_Log.dir/DependInfo.cmake"
   )

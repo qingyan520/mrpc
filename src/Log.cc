@@ -6,21 +6,21 @@
 #include<sys/stat.h>
 #include<unistd.h>
 
-#define LOG(level,message) Log::getInstance.log(#level,message,__FILE__,FUNCTION__,__LINE__)
+
 
 Log::Log(){
 
     //判断文件夹是否log是否存在，不存在就创建
     const char*dir="./log";
     if(-1==access(dir,0)){
-        mkdir(dir, mkdir(dir,S_IRWXU|S_IRWXG|S_IROTH|S_IXOTH);
+        mkdir(dir,S_IRWXU|S_IRWXG|S_IROTH|S_IXOTH);
     }
     //启动守护线程，后台一直写日志
     std::thread writeLogTask([&]{
         while(1)
         {
             //获取日志信息
-            std::string data=q_.pop();
+            const std::string data=q_.pop();
 
             //获取日期
             int pos=data.find(" ");
@@ -28,11 +28,12 @@ Log::Log(){
             file_name="./log/"+file_name+".txt";               //日志存放在当前目录log文件夹下面，以日期命名
             std::fstream f(file_name.c_str(),std::ios::out|std::ios::app);
             if(!f.is_open()){
-                std::cout<<file_name<<" 代开失败"<<std::endl;
+                std::cout<<file_name<<" 打开失败"<<std::endl;
             }
             else{
-                
+                f<<data<<std::endl;
             }
+            f.close();
         }
     });
     writeLogTask.detach();

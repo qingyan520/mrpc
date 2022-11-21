@@ -9,7 +9,7 @@
 #define INFO 99991
 #define WARNING 99992
 #define FATAL 99993
-
+#define LOG(Level,message) Log::GetInstance().log(#Level,message,__FILE__,__FUNCTION__,__LINE__)
 //设置为单例模式，然后利用宏定义进行书写
 class Log{
     public:

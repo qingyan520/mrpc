@@ -13,6 +13,6 @@
 /home/sjw/mrpc/build/example/caller/CMakeFiles/caller.dir
 /home/sjw/mrpc/build/test/CMakeFiles/edit_cache.dir
 /home/sjw/mrpc/build/test/CMakeFiles/rebuild_cache.dir
-/home/sjw/mrpc/build/test/ConfigFile/CMakeFiles/edit_cache.dir
-/home/sjw/mrpc/build/test/ConfigFile/CMakeFiles/rebuild_cache.dir
-/home/sjw/mrpc/build/test/ConfigFile/CMakeFiles/test_conf.dir
+/home/sjw/mrpc/build/test/Log/CMakeFiles/edit_cache.dir
+/home/sjw/mrpc/build/test/Log/CMakeFiles/rebuild_cache.dir
+/home/sjw/mrpc/build/test/Log/CMakeFiles/test_Log.dir

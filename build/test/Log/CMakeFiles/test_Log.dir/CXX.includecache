@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/LockQueue.h
+queue
+-
+condition_variable
+-
+mutex
+-
+
+../include/Log.h
+LockQueue.h
+../include/LockQueue.h
+string
+-
+thread
+-
+
+/home/sjw/mrpc/test/Log/test.cc
+Log.h
+/home/sjw/mrpc/test/Log/Log.h
+
