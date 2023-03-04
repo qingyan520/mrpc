@@ -1,5 +1,5 @@
 #include"MrpcProvider.h"
-
+#include"ZookeeperUtil.h"
 
 void MrpcProvider::NotifyService(google::protobuf::Service*service){
     //得到每一个service提供者的名字，service对象，service里面的每一个方法名称和方法实现
@@ -42,6 +42,16 @@ void MrpcProvider::Run(){
     //设置读写回调
     svr.setConnectionCallback(std::bind(&MrpcProvider::OnConnection,this,std::placeholders::_1));
     svr.setMessageCallback(std::bind(&MrpcProvider::OnMessage,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
+
+
+    //创建zkclient与zkserver进行连接
+    zkClient zk;
+    zk.start();
+    for(auto &sp:this->ServiceMap_){
+        std::string service_path="/"+sp.first;
+        
+    }
+
 
     //设置线程数量，一般为cpu核心数量
    svr.setThreadNum(std::thread::hardware_concurrency());
