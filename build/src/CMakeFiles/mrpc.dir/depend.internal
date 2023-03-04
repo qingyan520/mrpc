@@ -32,6 +32,12 @@ src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o
  ../include/MessageHeader.pb.h
  ../include/MrpcApplication.h
  ../include/MrpcProvider.h
+ ../include/ZookeeperUtil.h
  /home/sjw/mrpc/src/MrpcProvider.cc
 src/CMakeFiles/mrpc.dir/ZookeeperUtil.cc.o
+ ../include/ConfigFile.h
+ ../include/LockQueue.h
+ ../include/Log.h
+ ../include/MrpcApplication.h
+ ../include/ZookeeperUtil.h
  /home/sjw/mrpc/src/ZookeeperUtil.cc

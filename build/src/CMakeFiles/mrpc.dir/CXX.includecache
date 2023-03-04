@@ -138,6 +138,14 @@ MessageHeader.pb.h
 Log.h
 ../include/Log.h
 
+../include/ZookeeperUtil.h
+semaphore.h
+-
+zookeeper/zookeeper.h
+-
+string
+-
+
 /home/sjw/mrpc/src/ConfigFile.cc
 ConfigFile.h
 /home/sjw/mrpc/src/ConfigFile.h
@@ -197,6 +205,16 @@ MrpcController.h
 /home/sjw/mrpc/src/MrpcProvider.cc
 MrpcProvider.h
 /home/sjw/mrpc/src/MrpcProvider.h
+ZookeeperUtil.h
+/home/sjw/mrpc/src/ZookeeperUtil.h
 
 /home/sjw/mrpc/src/ZookeeperUtil.cc
+ZookeeperUtil.h
+/home/sjw/mrpc/src/ZookeeperUtil.h
+MrpcApplication.h
+/home/sjw/mrpc/src/MrpcApplication.h
+Log.h
+/home/sjw/mrpc/src/Log.h
+iostream
+-
 
