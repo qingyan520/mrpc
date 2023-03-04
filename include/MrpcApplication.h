@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
 #include"ConfigFile.h"
+
+//框架初始化
 class MrpcApplication{
     public:
     //设置单例模式读取配置文件

@@ -16,10 +16,12 @@
 #include"MrpcApplication.h"
 #include"MessageHeader.pb.h"
 #include"Log.h"
+
+//框架用于提供rpc服务
 class MrpcProvider{
     
     public:
-    //用来注册服务
+    //框架提供给外部使用的，用来注册服务
     void NotifyService(google::protobuf::Service*service);
     //启动一个rpc节点
     void Run();
