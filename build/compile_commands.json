@@ -35,6 +35,11 @@
   "file": "/home/sjw/mrpc/src/ConfigFile.cc"
 },
 {
+  "directory": "/home/sjw/mrpc/build/src",
+  "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/mrpc.dir/ZookeeperUtil.cc.o -c /home/sjw/mrpc/src/ZookeeperUtil.cc",
+  "file": "/home/sjw/mrpc/src/ZookeeperUtil.cc"
+},
+{
   "directory": "/home/sjw/mrpc/build/example/callee",
   "command": "/opt/rh/devtoolset-11/root/usr/bin/c++    -I/home/sjw/mrpc/include -I/home/sjw/mrpc/example  -g   -o CMakeFiles/provider.dir/UserService.cc.o -c /home/sjw/mrpc/example/callee/UserService.cc",
   "file": "/home/sjw/mrpc/example/callee/UserService.cc"

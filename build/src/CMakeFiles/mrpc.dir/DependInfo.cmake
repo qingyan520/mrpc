@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sjw/mrpc/src/MrpcChannel.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o"
   "/home/sjw/mrpc/src/MrpcController.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcController.cc.o"
   "/home/sjw/mrpc/src/MrpcProvider.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o"
+  "/home/sjw/mrpc/src/ZookeeperUtil.cc" "/home/sjw/mrpc/build/src/CMakeFiles/mrpc.dir/ZookeeperUtil.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

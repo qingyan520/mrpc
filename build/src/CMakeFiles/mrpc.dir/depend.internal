@@ -33,3 +33,5 @@ src/CMakeFiles/mrpc.dir/MrpcProvider.cc.o
  ../include/MrpcApplication.h
  ../include/MrpcProvider.h
  /home/sjw/mrpc/src/MrpcProvider.cc
+src/CMakeFiles/mrpc.dir/ZookeeperUtil.cc.o
+ /home/sjw/mrpc/src/ZookeeperUtil.cc

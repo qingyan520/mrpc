@@ -314,6 +314,33 @@ MrpcProvider.cc.s:
 	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/MrpcProvider.cc.s
 .PHONY : MrpcProvider.cc.s
 
+ZookeeperUtil.o: ZookeeperUtil.cc.o
+
+.PHONY : ZookeeperUtil.o
+
+# target to build an object file
+ZookeeperUtil.cc.o:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ZookeeperUtil.cc.o
+.PHONY : ZookeeperUtil.cc.o
+
+ZookeeperUtil.i: ZookeeperUtil.cc.i
+
+.PHONY : ZookeeperUtil.i
+
+# target to preprocess a source file
+ZookeeperUtil.cc.i:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ZookeeperUtil.cc.i
+.PHONY : ZookeeperUtil.cc.i
+
+ZookeeperUtil.s: ZookeeperUtil.cc.s
+
+.PHONY : ZookeeperUtil.s
+
+# target to generate assembly for a file
+ZookeeperUtil.cc.s:
+	cd /home/sjw/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/ZookeeperUtil.cc.s
+.PHONY : ZookeeperUtil.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -344,6 +371,9 @@ help:
 	@echo "... MrpcProvider.o"
 	@echo "... MrpcProvider.i"
 	@echo "... MrpcProvider.s"
+	@echo "... ZookeeperUtil.o"
+	@echo "... ZookeeperUtil.i"
+	@echo "... ZookeeperUtil.s"
 .PHONY : help
 
 
