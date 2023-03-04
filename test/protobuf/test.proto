@@ -1,0 +1,27 @@
+syntax = "proto3";
+package test;
+
+message ResultCode{
+    bytes errcode=1;
+    bytes errmsg=2;
+}
+message LoginRequest{
+    bytes name=1;
+    bytes pwd=2;
+}
+
+message LoginResponse{
+    ResultCode result=1;
+    bool succuss=2;
+}
+
+
+message User{
+    bytes id=1;
+    bytes name=2;
+}
+
+message getFriendList{
+    ResultCode result=1;
+    repeated User friend_list=2;
+}
