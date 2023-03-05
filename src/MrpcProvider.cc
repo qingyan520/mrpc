@@ -47,9 +47,18 @@ void MrpcProvider::Run(){
     //创建zkclient与zkserver进行连接
     zkClient zk;
     zk.start();
-    for(auto &sp:this->ServiceMap_){
+    for(auto&sp:ServiceMap_){
+        //zk的znode节点必须以根节点“/”开头。且创建子节点时父节点必须存在
         std::string service_path="/"+sp.first;
-        
+        zk.Create(service_path.c_str(),nullptr,0);
+        for(auto &mp:sp.second.MethodMap_){
+            //service_path: /service_name/method_name eg:/UserviceRpc/Login 存储当前rpc服务节点的ip和port
+            std::string method_path=service_path+"/"+mp.first;
+            char method_path_data[128]{0};
+            sprintf(method_path_data,"%s:%s",ip.c_str(),port.c_str());
+            //ZOO_EPHEMERAL代表当前znode是一个临时性节点
+            zk.Create(method_path.c_str(),method_path_data,strlen(method_path_data),ZOO_EPHEMERAL);
+        }
     }
 
 

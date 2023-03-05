@@ -1,5 +1,5 @@
 #include"MrpcChannel.h"
-
+#include"ZookeeperUtil.h"   
 
 static void SetErrorMessage(google::protobuf::RpcController*controller,const std::string& reason)
 {
@@ -71,8 +71,30 @@ void MrpcChannel::CallMethod(const google::protobuf::MethodDescriptor*method,
     }
 
     //读取对端ip,port，注意这里后续改为从zookeeper客户端读取
-    std::string ip=MrpcApplication::GetConfig().Load("server_ip");
-    std::string port=MrpcApplication::GetConfig().Load("server_port");
+    //std::string ip=MrpcApplication::GetConfig().Load("server_ip");
+    //std::string port=MrpcApplication::GetConfig().Load("server_port");
+
+    //创建zk客户端
+    zkClient zk;
+    zk.start();
+    std::string method_path="/"+service_name+"/"+method_name;
+    //127.0.0.1:8080
+    std::string host_data=zk.GetData(method_path.c_str());
+    if(host_data==""){
+        controller->SetFailed(method_path+" is not exist");
+        return;
+    }
+    int idx=host_data.find(":");
+    if(idx==std::string::npos){
+        controller->SetFailed(method_path+" address is invalid!");
+        return;
+    }
+
+    std::string ip=host_data.substr(0,idx);
+    std::string port=host_data.substr(idx+1);
+
+
+
     //std::cout<<"connect "<<ip<<":"<<port<<std::endl;
     sockaddr_in addr;
     addr.sin_family=AF_INET;

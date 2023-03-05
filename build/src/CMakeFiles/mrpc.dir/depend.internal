@@ -21,6 +21,7 @@ src/CMakeFiles/mrpc.dir/MrpcChannel.cc.o
  ../include/MrpcApplication.h
  ../include/MrpcChannel.h
  ../include/MrpcController.h
+ ../include/ZookeeperUtil.h
  /home/sjw/mrpc/src/MrpcChannel.cc
 src/CMakeFiles/mrpc.dir/MrpcController.cc.o
  ../include/MrpcController.h

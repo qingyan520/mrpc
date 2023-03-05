@@ -60,15 +60,15 @@ include test/Log/CMakeFiles/test_Log.dir/flags.make
 test/Log/CMakeFiles/test_Log.dir/test.cc.o: test/Log/CMakeFiles/test_Log.dir/flags.make
 test/Log/CMakeFiles/test_Log.dir/test.cc.o: ../test/Log/test.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sjw/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/Log/CMakeFiles/test_Log.dir/test.cc.o"
-	cd /home/sjw/mrpc/build/test/Log && /opt/rh/devtoolset-11/root/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_Log.dir/test.cc.o -c /home/sjw/mrpc/test/Log/test.cc
+	cd /home/sjw/mrpc/build/test/Log && /opt/rh/devtoolset-7/root/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_Log.dir/test.cc.o -c /home/sjw/mrpc/test/Log/test.cc
 
 test/Log/CMakeFiles/test_Log.dir/test.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_Log.dir/test.cc.i"
-	cd /home/sjw/mrpc/build/test/Log && /opt/rh/devtoolset-11/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sjw/mrpc/test/Log/test.cc > CMakeFiles/test_Log.dir/test.cc.i
+	cd /home/sjw/mrpc/build/test/Log && /opt/rh/devtoolset-7/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sjw/mrpc/test/Log/test.cc > CMakeFiles/test_Log.dir/test.cc.i
 
 test/Log/CMakeFiles/test_Log.dir/test.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_Log.dir/test.cc.s"
-	cd /home/sjw/mrpc/build/test/Log && /opt/rh/devtoolset-11/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sjw/mrpc/test/Log/test.cc -o CMakeFiles/test_Log.dir/test.cc.s
+	cd /home/sjw/mrpc/build/test/Log && /opt/rh/devtoolset-7/root/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sjw/mrpc/test/Log/test.cc -o CMakeFiles/test_Log.dir/test.cc.s
 
 test/Log/CMakeFiles/test_Log.dir/test.cc.o.requires:
 

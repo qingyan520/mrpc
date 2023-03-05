@@ -197,6 +197,8 @@ unistd.h
 /home/sjw/mrpc/src/MrpcChannel.cc
 MrpcChannel.h
 /home/sjw/mrpc/src/MrpcChannel.h
+ZookeeperUtil.h
+/home/sjw/mrpc/src/ZookeeperUtil.h
 
 /home/sjw/mrpc/src/MrpcController.cc
 MrpcController.h
